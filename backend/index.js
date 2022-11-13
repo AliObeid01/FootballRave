@@ -14,7 +14,8 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-
+app.use('/auth', authRoutes);
+app.use('/user', usersRoutes);
 
 app.listen(process.env.PORT, (err)=>{
   if(err) throw err;
