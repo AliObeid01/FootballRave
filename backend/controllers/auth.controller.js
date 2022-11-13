@@ -21,8 +21,25 @@ const signup = async (req, res) => {
     }
   }
 
+  const signin = async (req, res) => {
+    const {email, password} = req.body;
+  
+    const user = await User.findOne({email});
+  
+    if(!user) return res.status(404).json({message: "Invalid Credentials"});
+  
+    const isMatch = bcrypt.compare(password, user.password);
+    if(!isMatch) return res.status(404).json({message: "Invalid Credentials"});
+  
+    const token = jwt.sign({email: user.email}, process.env.JWT_SECRET_KEY, {
+      expiresIn: '10h'
+    });
+  
+    res.status(200).json(token)
+    }
 
 
 module.exports = {
-  signup
+  signup,
+  signin
 }
