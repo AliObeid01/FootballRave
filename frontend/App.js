@@ -14,7 +14,8 @@ import {
   Matches,
   NewsDetails,
   League,
-  Teams
+  Teams,
+  Team
 
 } from './src/screens'
 
@@ -41,6 +42,8 @@ export default function App() {
             name="League" component={League}/>
           <Stack.Screen options={({route}) =>({headerShown: true, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="Teams" component={Teams}/>
+          <Stack.Screen options={({route}) =>({headerShown: true,headerRight: () => (<HeaderIcons/>), title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+            name="Team" component={Team}/>
 
         </Stack.Navigator>
         
