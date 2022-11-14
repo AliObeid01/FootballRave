@@ -69,6 +69,7 @@ export default function Matches() {
       headerTintColor:  COLORS.secondaryColor
   })}>
       <Tab.Screen name="Matches" component={MatchScreen}/>
+      <Tab.Screen name="Leagues" component={LeaguesScreen}/>
     </Tab.Navigator>
   )
 }
