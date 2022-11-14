@@ -53,7 +53,37 @@ const getLeagueTeams = async (req,res) => {
   res.json({data:team});
 }
 
+const getLeagueFixtures = async (req,res) => {
+  
+  const fixtures = {
+    method: 'GET',
+    url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
+    params: {season: '2022', league: req.body.league_id},
+    headers: {
+      'X-RapidAPI-Key': '8cdff61333mshda0c85114bfdbdep18ff1ejsn7e52e5f6effe',
+      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+    }
+  };
+
+  const leagueFixtures=[];
+  await axios.request(fixtures).then(function (response) {
+    for(i=0;i<response.data.response.length;i++){
+      let id=response.data.response[i].fixture.id;
+      let timezone=response.data.response[i].fixture.timezone;
+      let date=response.data.response[i].fixture.date;
+      let teams=response.data.response[i].teams;
+      let goals=response.data.response[i].goals;
+      leagueFixtures.push({id,timezone,date,teams,goals})
+    }
+  }).catch(function (error) {
+      console.error(error);
+  });
+  
+  res.json({data:leagueFixtures});
+}
+
 module.exports = {
   getLeagues,
   getLeagueTeams,
+  getLeagueFixtures
 }
