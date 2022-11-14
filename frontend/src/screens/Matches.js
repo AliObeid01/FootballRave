@@ -58,7 +58,7 @@ export default function Matches() {
       headerStyle: {backgroundColor:COLORS.primaryColor},
       headerTintColor:  COLORS.secondaryColor
   })}>
-
+      <Tab.Screen name="Matches" component={MatchScreen}/>
     </Tab.Navigator>
   )
 }
