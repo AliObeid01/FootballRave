@@ -80,6 +80,8 @@ export default function Matches() {
   })}>
       <Tab.Screen name="Matches" component={MatchScreen}/>
       <Tab.Screen name="Leagues" component={LeaguesScreen}/>
+      <Tab.Screen name="News" component={NewsScreen} />
+      
     </Tab.Navigator>
   )
 }
