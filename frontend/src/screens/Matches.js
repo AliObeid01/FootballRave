@@ -43,6 +43,16 @@ function LeaguesScreen() {
   );
 }
 
+function NewsScreen() {
+  return (
+    <ScrollView style={{backgroundColor:COLORS.InputColor}}>
+      <NewsCard screenName='NewsDetails' path={require('../assets/1.jpg')}/>
+      <NewsCard screenName='NewsDetails' path={require('../assets/news.jpg')}/>
+      <NewsCard screenName='NewsDetails' path={require('../assets/2.jpg')}/>
+    </ScrollView>
+  );
+}
+
 const Tab = createBottomTabNavigator()
 
 export default function Matches() {
