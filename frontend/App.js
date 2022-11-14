@@ -11,7 +11,8 @@ import {
   RegisterScreen,
   ResetPasswordScreen,
   Matches,
-  League
+  NewsDetails,
+  League,
 
 } from './src/screens'
 
@@ -32,6 +33,8 @@ export default function App() {
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen}/>
           <Stack.Screen name="Matches" component={Matches}/>
+          <Stack.Screen options={({route}) =>({headerShown: true,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+            name="NewsDetails" component={NewsDetails}/>
           <Stack.Screen options={({route}) =>({headerShown: true,headerRight: () => (<HeaderIcons/>), title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="League" component={League}/>
 
