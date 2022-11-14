@@ -4,6 +4,6 @@ const authUserMiddleware = require('../middlewares/user.middleware');
 const router = Router();
 
 router.get('/leagues', authUserMiddleware, getleagues);
-
+router.post('/teams', authUserMiddleware, getleagueTeams);
 
 module.exports = router;
