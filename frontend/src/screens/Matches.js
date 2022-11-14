@@ -53,6 +53,13 @@ function NewsScreen() {
   );
 }
 
+function PredictionScreen() {
+  return (
+    <ScrollView style={{backgroundColor:COLORS.InputColor}}>  
+     </ScrollView>
+  );
+}
+
 const Tab = createBottomTabNavigator()
 
 export default function Matches() {
@@ -81,7 +88,7 @@ export default function Matches() {
       <Tab.Screen name="Matches" component={MatchScreen}/>
       <Tab.Screen name="Leagues" component={LeaguesScreen}/>
       <Tab.Screen name="News" component={NewsScreen} />
-      
+
     </Tab.Navigator>
   )
 }
