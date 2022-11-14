@@ -33,6 +33,16 @@ function MatchScreen() {
   );
 }
 
+function LeaguesScreen() {
+  return (
+    <View style={{backgroundColor:COLORS.InputColor,flexDirection: 'row',justifyContent: 'center',alignItems: 'center',flexWrap: 'wrap',height:'100%'}}>
+      <LeagueCard name='Premier League' path={require('../assets/PL-Lion.png')} screenName='League'/>
+      <LeagueCard name='La Liga' path={require('../assets/laliga.png')} screenName='League'/>
+      <LeagueCard name='Serie A' path={require('../assets/seriaA.jpg')} screenName='League'/>
+    </View>
+  );
+}
+
 const Tab = createBottomTabNavigator()
 
 export default function Matches() {
