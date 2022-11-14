@@ -5,8 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack'
 import HeaderIcons from './src/components/HeaderIcons'
 import { COLORS } from './src/core/COLORS'
 
-
-
 import {
   LoginScreen,
   RegisterScreen,
@@ -15,7 +13,8 @@ import {
   NewsDetails,
   League,
   Teams,
-  Team
+  Team,
+  MatchDetails
 
 } from './src/screens'
 
@@ -44,6 +43,8 @@ export default function App() {
             name="Teams" component={Teams}/>
           <Stack.Screen options={({route}) =>({headerShown: true,headerRight: () => (<HeaderIcons/>), title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="Team" component={Team}/>
+          <Stack.Screen options={({route}) =>({headerShown: true,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+            name="MatchDetails" component={MatchDetails}/>
 
         </Stack.Navigator>
         
