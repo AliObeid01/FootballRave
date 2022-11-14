@@ -2,6 +2,7 @@ import React from 'react'
 import { Provider } from 'react-native-paper'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import HeaderIcons from './src/components/HeaderIcons'
 import { COLORS } from './src/core/COLORS'
 
 
@@ -13,6 +14,7 @@ import {
   Matches,
   NewsDetails,
   League,
+  Teams
 
 } from './src/screens'
 
@@ -37,6 +39,8 @@ export default function App() {
             name="NewsDetails" component={NewsDetails}/>
           <Stack.Screen options={({route}) =>({headerShown: true,headerRight: () => (<HeaderIcons/>), title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="League" component={League}/>
+          <Stack.Screen options={({route}) =>({headerShown: true, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+            name="Teams" component={Teams}/>
 
         </Stack.Navigator>
         
