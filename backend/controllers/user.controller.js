@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const getleagues = async (res) => {
+const getLeagues = async (res) => {
 
   const leagues = {
     method: 'GET',
@@ -26,7 +26,7 @@ const getleagues = async (res) => {
   res.json({data:league});
 }
 
-const getleagueTeams = async (req,res) => {
+const getLeagueTeams = async (req,res) => {
   
   const standings = {
     method: 'GET',
@@ -54,6 +54,6 @@ const getleagueTeams = async (req,res) => {
 }
 
 module.exports = {
-  getleagues,
-  getleagueTeams,
+  getLeagues,
+  getLeagueTeams,
 }
