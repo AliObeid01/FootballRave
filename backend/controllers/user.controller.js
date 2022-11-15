@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const getLeagues = async (res) => {
+const getLeagues = async (req,res) => {
 
   const leagues = {
     method: 'GET',
