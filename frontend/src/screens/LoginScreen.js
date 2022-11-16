@@ -8,24 +8,46 @@ import TextInput from '../components/TextInput'
 import { COLORS } from '../core/COLORS'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
+import axios from "axios"
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
+  
 
-  const onLoginPressed = () => {
+  const onLoginPressed = async () => {
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
-    if (emailError || passwordError) {
-      setEmail({ ...email, error: emailError })
-      setPassword({ ...password, error: passwordError })
-      return
+
+    const data={
+      email: email.value,
+      password: password.value
     }
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Matches' }],
-    })
-  }
+
+  try{
+      await axios({
+        
+        method: "POST",
+        data,
+        url: "http://192.168.1.50:5000/auth/signin",
+        headers:{
+          'Content-Type': 'application/x-www-form-urlencoded',
+          }
+
+      }).then(async (res) => {
+
+        await AsyncStorage.setItem('@token',res.data.token)
+          navigation.reset({
+            index: 0,
+            routes: [{ name: 'Matches' }],
+          })
+        })
+    }catch(error){
+      
+      console.log(error.response.data.message)
+    }
+ }
 
   return (   
     <Background>
