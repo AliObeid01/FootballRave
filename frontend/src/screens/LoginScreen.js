@@ -17,15 +17,17 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState({ value: '', error: '' })
   const [authError, setAuthError] = useState('')
   
-  if (emailError || passwordError) {
-    setEmail({ ...email, error: emailError })
-    setPassword({ ...password, error: passwordError })
-    return
-  }
+
 
   const onLoginPressed = async () => {
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
+
+    if (emailError || passwordError) {
+      setEmail({ ...email, error: emailError })
+      setPassword({ ...password, error: passwordError })
+      return
+    }
 
     const data={
       email: email.value,
