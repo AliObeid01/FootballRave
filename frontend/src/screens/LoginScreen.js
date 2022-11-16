@@ -17,8 +17,6 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState({ value: '', error: '' })
   const [authError, setAuthError] = useState('')
   
-
-
   const onLoginPressed = async () => {
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
@@ -35,32 +33,27 @@ export default function LoginScreen({ navigation }) {
     }
 
   try{
-      await axios({
-        
+      await axios({       
         method: "POST",
         data,
         url: "http://192.168.1.50:5000/auth/signin",
         headers:{
           'Content-Type': 'application/x-www-form-urlencoded',
           }
-
       }).then(async (res) => {
-
-        await AsyncStorage.setItem('@token',res.data.token)
+          await AsyncStorage.setItem('@token',res.data.token)
           navigation.reset({
             index: 0,
             routes: [{ name: 'Matches' }],
           })
         })
     }catch(error){
-      setAuthError(error.response.data.message)
-      
+      setAuthError(error.response.data.message)   
     }
  }
 
   return (   
-    <Background>
-      
+    <Background>     
       <Logo />
       <Title style={{fontSize: 15,color:COLORS.secondaryColor}}>{authError}</Title>
       <TextInput
@@ -99,10 +92,8 @@ export default function LoginScreen({ navigation }) {
         <TouchableOpacity onPress={() => navigation.replace('RegisterScreen')}>
           <Text style={styles.link}>Sign up</Text>
         </TouchableOpacity>
-      </View>
-      
-    </Background>
-    
+      </View>   
+    </Background>  
   )
 }
 
