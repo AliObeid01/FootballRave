@@ -60,8 +60,9 @@ export default function LoginScreen({ navigation }) {
 
   return (   
     <Background>
-      <Title>{authError}</Title>
+      
       <Logo />
+      <Title style={{fontSize: 15,color:COLORS.secondaryColor}}>{authError}</Title>
       <TextInput
         label="Email"
         returnKeyType="next"
