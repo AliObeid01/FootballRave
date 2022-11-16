@@ -14,6 +14,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
+  const [authError, setAuthError] = useState('')
   
   if (emailError || passwordError) {
     setEmail({ ...email, error: emailError })
@@ -49,8 +50,8 @@ export default function LoginScreen({ navigation }) {
           })
         })
     }catch(error){
+      setAuthError(error.response.data.message)
       
-      console.log(error.response.data.message)
     }
  }
 
