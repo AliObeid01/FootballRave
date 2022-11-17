@@ -62,7 +62,7 @@ function MatchScreen() {
     <ScrollView>
     <View style={{backgroundColor:COLORS.InputColor,flexDirection: 'row',justifyContent: 'center',alignItems: 'center',flexWrap: 'wrap',height:'100%'}}>
             {legs.map((leg) => {
-               return <LeagueCard name={leg.name} path={{uri:leg.logo}} screenName='League'/>
+               return <LeagueCard id={leg.id} name={leg.name} path={{uri:leg.logo}} screenName='League'/>
             })}      
     </View>
     </ScrollView>

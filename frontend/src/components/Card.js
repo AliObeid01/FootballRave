@@ -72,7 +72,7 @@ const Card = (props) => {
     )
   }
   return (    
-    <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(props.screenName,{title: props.title})}>
+    <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(props.screenName,{title: props.title,league_id:props.id})}>
         <AntDesign style={styles.text} name={props.icon} size={50} />
         <Text style={styles.text}>{props.title}</Text>
    </TouchableOpacity> 

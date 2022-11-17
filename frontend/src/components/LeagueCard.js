@@ -7,7 +7,7 @@ const LeagueCard = (props) => {
   const navigation = useNavigation();
   return (
     
-   <TouchableOpacity delayPressIn={70} style={styles.card_template} onPress={() => navigation.navigate(props.screenName,{title: props.name})}>
+   <TouchableOpacity delayPressIn={70} style={styles.card_template} onPress={() => navigation.navigate(props.screenName,{title: props.name,id:props.id})}>
         <Image style={styles.card_image} source={props.path}/> 
         <Text style={styles.card_title} >{props.name}</Text> 
    </TouchableOpacity>

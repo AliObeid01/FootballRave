@@ -37,11 +37,11 @@ export default function App() {
           <Stack.Screen name="Matches" component={Matches}/>
           <Stack.Screen options={({route}) =>({headerShown: true,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="NewsDetails" component={NewsDetails}/>
-          <Stack.Screen options={({route}) =>({headerShown: true,headerRight: () => (<HeaderIcons/>), title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+          <Stack.Screen options={({route}) =>({headerShown: true,headerRight: () => (<HeaderIcons/>),id:route.params.id, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="League" component={League}/>
-          <Stack.Screen options={({route}) =>({headerShown: true, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+          <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="Teams" component={Teams}/>
-          <Stack.Screen options={({route}) =>({headerShown: true,headerRight: () => (<HeaderIcons/>), title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+          <Stack.Screen options={({route}) =>({headerShown: true,headerRight: () => (<HeaderIcons/>), title: route.params.id ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="Team" component={Team}/>
           <Stack.Screen options={({route}) =>({headerShown: true,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="MatchDetails" component={MatchDetails}/>
