@@ -14,9 +14,6 @@ import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
-
-
-
 function MatchScreen() {
 
   return (
@@ -44,24 +41,7 @@ function MatchScreen() {
 
   const [legs, setLeg] = useState([]);
 
-  // const fetch= async ()=>{
-  //   const token = await AsyncStorage.getItem('@token')
-  //    await axios({
-  //     method: "GET",
-  //     url: `http://192.168.1.50:5000/user/leagues`,
-  //     headers:{
-  //       "Authorization" : "Bearer " + token
-
-  //      }
-  //   }).then((res) => {
-  //     //console.log(res.data);
-  //     setLeg(res.data);
-  //     console.log(legs)
-  //   });
-  // }
-  
   useEffect(() => {
-
     const getleagues= async ()=>{
       const token = await AsyncStorage.getItem('@token')
       axios({
@@ -72,13 +52,10 @@ function MatchScreen() {
   
          }
       }).then((res) => {
-        //console.log(res.data);
-        setLeg(res.data.data);
-        //console.log(res.data.data[0].logo)
+        setLeg(res.data.data); 
       });
     }
     getleagues();
-    
   }, []);
 
   return (
