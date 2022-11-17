@@ -16,6 +16,7 @@ export default function RegisterScreen({ navigation }) {
   const [name, setName] = useState({ value: '', error: '' })
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
+  const [registerError, setRegisterError] = useState('')
 
   const onSignUpPressed = async () => {
     const nameError = nameValidator(name.value)
@@ -47,7 +48,7 @@ export default function RegisterScreen({ navigation }) {
           navigation.navigate('LoginScreen')
         })
     }catch(error){
-      console.log(error)  
+      setRegisterError(error.response.data.message)  
     }
  }
 
@@ -55,7 +56,7 @@ export default function RegisterScreen({ navigation }) {
     <Background>
       <Logo />
       <Title>Create Account</Title>
-      <Title style={{fontSize: 15,color:COLORS.error}}>Create Account</Title>
+      <Title style={{fontSize: 15,color:COLORS.error}}>{registerError}</Title>
       <TextInput
         label="Name"
         returnKeyType="next"
