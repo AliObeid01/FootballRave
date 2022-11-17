@@ -1,18 +1,14 @@
 import * as React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { COLORS } from '../core/COLORS'
-import Card from '../components/Card'
 
-export default function MatchDetails() {
+
+export default function LeagueFixtures() {
 
 return (
     
   <View style={styles.container} >
-    <Card title="Overview" icon='preview'/>
-    <Card title="Table" icon='table'/>
-    <Card title="Lineup" icon='linechart'/>
-    <Card title="H2H" icon='users'/>
-    <Card title="Injuries" icon='user-injured'/>       
+      
   </View>
     
   )
