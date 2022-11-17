@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 150,
     borderRadius:10,
-    resizeMode: "cover",
+    resizeMode: "contain",
   },
   card_title: {
     color: COLORS.secondaryColor,
