@@ -71,9 +71,10 @@ const getLeagueFixtures = async (req,res) => {
       let id=response.data.response[i].fixture.id;
       let timezone=response.data.response[i].fixture.timezone;
       let date=response.data.response[i].fixture.date;
+      let status=response.data.response[i].fixture.status.short;
       let teams=response.data.response[i].teams;
       let goals=response.data.response[i].goals;
-      leagueFixtures.push({id,timezone,date,teams,goals})
+      leagueFixtures.push({id,timezone,date,status,teams,goals})
     }
   }).catch(function (error) {
       console.error(error);
@@ -81,8 +82,6 @@ const getLeagueFixtures = async (req,res) => {
   
   res.json({data:leagueFixtures});
 }
-
-
 
 module.exports = {
   getLeagues,
