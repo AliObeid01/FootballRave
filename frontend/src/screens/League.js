@@ -10,7 +10,7 @@ return (
   <View style={styles.container} >
     <Card title="Table" icon='table'/>
     <Card screenName='Teams' title="Teams" icon='team' id={id}/>
-    <Card screenName='LeagueFixtures' title="Matches" icon='soccer-field' id={id}/>
+    <Card screenName='LeagueFixtures' title="Fixtures" icon='soccer-field' id={id}/>
     <Card title="News" icon='newspaper-outline'/>
     <Card title="Seasons" icon='trophy'/>
   </View>
