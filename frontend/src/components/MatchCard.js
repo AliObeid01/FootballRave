@@ -10,7 +10,7 @@ const navigation = useNavigation()
     <TouchableOpacity delayPressIn={70} style={styles.matchCon} onPress={() => navigation.navigate(props.screenName)}>
         <Text style={styles.matchText}>{props.team1}</Text>
         <Avatar  size="small" rounded source={props.team1Avatar}/>
-        <Text style={styles.matchText}>{props.time}</Text>
+        <Text style={{color: COLORS.fontPrimary,padding:5}}>{props.time}</Text>
         <Avatar  size="small" rounded source={props.team2Avatar}/>
         <Text style={styles.matchText}>{props.team2}</Text>
     </TouchableOpacity>
@@ -27,8 +27,10 @@ matchCon: {
     paddingRight: 20,
 },
 matchText: {
-    marginLeft: 10,
-    marginRight: 10,
+  flex: 1, 
+  // flexWrap: 'wrap',
+  //   marginLeft: 10,
+  //   marginRight: 10,
     fontSize: 13,
     textAlign: 'center',
     color: COLORS.fontPrimary
