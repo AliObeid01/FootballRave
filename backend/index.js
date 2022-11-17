@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/auth', authRoutes);
 app.use('/user', usersRoutes);
 
-app.listen(process.env.PORT, (err)=>{
+app.listen(process.env.PORT,'192.168.1.50', (err)=>{
   if(err) throw err;
   console.log(`server running on port ${process.env.PORT}`);
 })
