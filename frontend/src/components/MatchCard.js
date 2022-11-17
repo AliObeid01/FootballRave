@@ -27,10 +27,7 @@ matchCon: {
     paddingRight: 20,
 },
 matchText: {
-  flex: 1, 
-  // flexWrap: 'wrap',
-  //   marginLeft: 10,
-  //   marginRight: 10,
+    flex: 1, 
     fontSize: 13,
     textAlign: 'center',
     color: COLORS.fontPrimary
