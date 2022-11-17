@@ -10,13 +10,14 @@ import { COLORS } from '../core/COLORS'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { nameValidator } from '../helpers/nameValidator'
+import axios from "axios"
 
 export default function RegisterScreen({ navigation }) {
   const [name, setName] = useState({ value: '', error: '' })
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
-  const onSignUpPressed = () => {
+  const onSignUpPressed = async () => {
     const nameError = nameValidator(name.value)
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
@@ -26,11 +27,29 @@ export default function RegisterScreen({ navigation }) {
       setPassword({ ...password, error: passwordError })
       return
     }
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Matches' }],
-    })
-  }
+
+    const data={
+      name:name.value,
+      email: email.value,
+      password: password.value
+    }
+
+    try{
+      await axios({       
+        method: "POST",
+        data,
+        url: "http://192.168.1.50:5000/auth/signup",
+        headers:{
+          'Content-Type': 'application/x-www-form-urlencoded',
+          }
+      }).then((res) => {
+          console.log(res.data)
+          navigation.navigate('LoginScreen')
+        })
+    }catch(error){
+      console.log(error)  
+    }
+ }
 
   return (
     <Background>
