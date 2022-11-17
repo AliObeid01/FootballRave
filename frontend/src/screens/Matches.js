@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect, useState } from "react"
 import { ScrollView, View} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS } from '../core/COLORS'
@@ -10,8 +11,14 @@ import NewsCard from '../components/NewsCard'
 import LeagueCard from '../components/LeagueCard'
 import LeagueMatchCard from '../components/LeagueMatchCard'
 import MatchCard from '../components/MatchCard'
+import axios from "axios"
+import AsyncStorage from "@react-native-async-storage/async-storage"
+
+
+
 
 function MatchScreen() {
+
   return (
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
       <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
@@ -33,20 +40,62 @@ function MatchScreen() {
   );
 }
 
-function LeaguesScreen() {
+ function LeaguesScreen(){
+
+  const [legs, setLeg] = useState([]);
+
+  // const fetch= async ()=>{
+  //   const token = await AsyncStorage.getItem('@token')
+  //    await axios({
+  //     method: "GET",
+  //     url: `http://192.168.1.50:5000/user/leagues`,
+  //     headers:{
+  //       "Authorization" : "Bearer " + token
+
+  //      }
+  //   }).then((res) => {
+  //     //console.log(res.data);
+  //     setLeg(res.data);
+  //     console.log(legs)
+  //   });
+  // }
+  
+  useEffect(() => {
+
+    const getleagues= async ()=>{
+      const token = await AsyncStorage.getItem('@token')
+      axios({
+        method: "GET",
+        url: `http://192.168.1.50:5000/user/leagues`,
+        headers:{
+          "Authorization" : "Bearer " +token
+  
+         }
+      }).then((res) => {
+        //console.log(res.data);
+        setLeg(res.data.data);
+        //console.log(res.data.data[0].logo)
+      });
+    }
+    getleagues();
+    
+  }, []);
+
   return (
+    <ScrollView>
     <View style={{backgroundColor:COLORS.InputColor,flexDirection: 'row',justifyContent: 'center',alignItems: 'center',flexWrap: 'wrap',height:'100%'}}>
-      <LeagueCard name='Premier League' path={require('../assets/PL-Lion.png')} screenName='League'/>
-      <LeagueCard name='La Liga' path={require('../assets/laliga.png')} screenName='League'/>
-      <LeagueCard name='Serie A' path={require('../assets/seriaA.jpg')} screenName='League'/>
+            {legs.map((leg) => {
+               return <LeagueCard name={leg.name} path={{uri:leg.logo}} screenName='League'/>
+            })}      
     </View>
+    </ScrollView>
   );
 }
 
 function NewsScreen() {
   return (
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
-      <NewsCard screenName='NewsDetails' path={require('../assets/1.jpg')}/>
+      <NewsCard screenName='NewsDetails' path={require('../assets/news.jpg')}/>
       <NewsCard screenName='NewsDetails' path={require('../assets/news.jpg')}/>
       <NewsCard screenName='NewsDetails' path={require('../assets/2.jpg')}/>
     </ScrollView>
