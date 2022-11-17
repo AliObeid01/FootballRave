@@ -12,8 +12,7 @@ export default function Teams({route}) {
   const league_id = route.params.league_id;
   const data={
     league_id   
-  }
-  
+  }  
   useEffect(() => {
     const getTeams= async ()=>{
       const token = await AsyncStorage.getItem('@token')
@@ -27,7 +26,6 @@ export default function Teams({route}) {
          }
       }).then((res) => {
         setTeams(res.data.data);
-        console.log(teams)
       });
     }
     getTeams();
@@ -38,8 +36,7 @@ return (
     <View style={{flexDirection: 'row',justifyContent: 'center',alignItems: 'center',flexWrap: 'wrap'}}>
         {teams.map((team) => {
                return <TeamCard name={team.name} path={{uri:team.logo}} screenName='Team'/>
-            })}  
-        
+            })}       
     </View>
     </ScrollView>
   )

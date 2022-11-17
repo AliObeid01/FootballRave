@@ -5,7 +5,6 @@ import Card from '../components/Card'
 
 export default function League({route}) {
   const id = route.params.id;
-  //console.log(id)
 return (
   
   <View style={styles.container} >
