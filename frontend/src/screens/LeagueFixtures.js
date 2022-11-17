@@ -3,19 +3,19 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { COLORS } from '../core/COLORS'
 import Card from '../components/Card'
 
-export default function League({route}) {
-  const id = route.params.id;
+export default function MatchDetails() {
+
 return (
-  
+    
   <View style={styles.container} >
+    <Card title="Overview" icon='preview'/>
     <Card title="Table" icon='table'/>
-    <Card screenName='Teams' title="Teams" icon='team' id={id}/>
-    <Card screenName='LeagueFixtures' title="Matches" icon='soccer-field' id={id}/>
-    <Card title="News" icon='newspaper-outline'/>
-    <Card title="Seasons" icon='trophy'/>
+    <Card title="Lineup" icon='linechart'/>
+    <Card title="H2H" icon='users'/>
+    <Card title="Injuries" icon='user-injured'/>       
   </View>
     
-  );
+  )
 }
 
 const styles = StyleSheet.create({
