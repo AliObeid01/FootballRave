@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     margin: 5,
     borderRadius:10,
     borderWidth:0.5,
-    borderColor:'white',
-    backgroundColor:COLORS.primaryColor,
+    borderColor:COLORS.secondaryColor,
+    backgroundColor:"white",
   },
   card_image: {
     width: '100%',
@@ -34,7 +34,10 @@ const styles = StyleSheet.create({
   card_title: {
     color: COLORS.secondaryColor,
     textAlign: 'center',
-    fontSize:13
+    fontSize:13,
+    fontWeight:"bold",
+    borderRadius:10,
+    backgroundColor:COLORS.primaryColor
   }
 })
 
