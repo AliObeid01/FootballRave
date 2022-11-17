@@ -16,7 +16,7 @@ const signup = async (req, res) => {
   
     } catch(err) {
       res.status(400).json({
-        message: err.message
+        message: 'Email already exist'
       });
     }
   }
@@ -29,14 +29,14 @@ const signup = async (req, res) => {
     if(!user) return res.status(404).json({message: "Invalid Credentials"});
   
     const isMatch = await bcrypt.compare(password, user.password);
-    console.log(isMatch)
+
     if(!isMatch) return res.status(404).json({message: "Invalid Credentials"});
   
     const token = jwt.sign({email: user.email}, process.env.JWT_SECRET_KEY, {
       expiresIn: '10h'
     });
   
-    res.status(200).json(token)
+    res.status(200).json({token:token})
     }
 
 
