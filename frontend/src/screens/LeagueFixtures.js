@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useEffect, useState } from "react"
 import { StyleSheet, ScrollView ,View } from 'react-native'
 import { COLORS } from '../core/COLORS'
-import LeagueMatchCard from '../components/LeagueMatchCard'
+import FixtureCard from '../components/FixtureCard'
 import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
@@ -42,12 +42,17 @@ return (
               if(fix.status=='FT'){
                 return (
                 <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
-                <LeagueMatchCard name={fix.date.substr(0,10)} screenName='League' />    
+                <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()}/>    
                 <MatchCard time={fix.goals.home+'-'+fix.goals.away} screenName='MatchDetails' team1={fix.teams.home.name} team2={fix.teams.away.name} team1Avatar={{uri:fix.teams.home.logo}} team2Avatar={{uri:fix.teams.away.logo}}/>
                 </View>
                 )
               }
-                return <MatchCard time={fix.date.substr(11,5)+' '+fix.timezone} screenName='MatchDetails' team1={fix.teams.home.name} team2={fix.teams.away.name} team1Avatar={{uri:fix.teams.home.logo}} team2Avatar={{uri:fix.teams.away.logo}}/>
+              return (
+                <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
+                <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()}/>    
+                <MatchCard time={fix.date.substr(11,5)+' '+fix.timezone} screenName='MatchDetails' team1={fix.teams.home.name} team2={fix.teams.away.name} team1Avatar={{uri:fix.teams.home.logo}} team2Avatar={{uri:fix.teams.away.logo}}/>
+                </View>
+                )
             })}    
       
     </ScrollView>
