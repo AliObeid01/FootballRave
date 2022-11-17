@@ -82,6 +82,8 @@ const getLeagueFixtures = async (req,res) => {
   res.json({data:leagueFixtures});
 }
 
+
+
 module.exports = {
   getLeagues,
   getLeagueTeams,
