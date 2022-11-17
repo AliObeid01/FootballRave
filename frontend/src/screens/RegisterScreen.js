@@ -55,6 +55,7 @@ export default function RegisterScreen({ navigation }) {
     <Background>
       <Logo />
       <Title>Create Account</Title>
+      <Title style={{fontSize: 15,color:COLORS.error}}>Create Account</Title>
       <TextInput
         label="Name"
         returnKeyType="next"
