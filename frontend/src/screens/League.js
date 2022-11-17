@@ -8,7 +8,7 @@ export default function League({route}) {
 return (
   
   <View style={styles.container} >
-    <Card title="Table" icon='table'/>
+    <Card screenName='TableScreen' title="Table" icon='table'/>
     <Card screenName='Teams' title="Teams" icon='team' id={id}/>
     <Card screenName='LeagueFixtures' title="Fixtures" icon='soccer-field' id={id}/>
     <Card title="News" icon='newspaper-outline'/>
