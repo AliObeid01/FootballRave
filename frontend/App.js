@@ -16,7 +16,8 @@ import {
   Team,
   MatchDetails,
   LeagueFixtures,
-  TableScreen
+  TableScreen,
+  TopScores
 
 } from './src/screens'
 
@@ -50,7 +51,9 @@ export default function App() {
           <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="LeagueFixtures" component={LeagueFixtures}/>
           <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
-            name="TableScreen" component={TableScreen}/>   
+            name="TableScreen" component={TableScreen}/>
+          <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+            name="TopScores" component={TopScores}/>  
         </Stack.Navigator>
         
       </NavigationContainer>
