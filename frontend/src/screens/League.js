@@ -11,8 +11,7 @@ return (
     <Card screenName='TableScreen' title="Table" icon='table' id={id}/>
     <Card screenName='Teams' title="Teams" icon='team' id={id}/>
     <Card screenName='LeagueFixtures' title="Fixtures" icon='soccer-field' id={id}/>
-    <Card title="News" icon='newspaper-outline'/>
-    <Card title="Seasons" icon='trophy'/>
+    <Card title="Top Scores" icon='newspaper-outline'/>
   </View>
     
   );
