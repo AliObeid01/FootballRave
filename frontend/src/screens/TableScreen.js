@@ -1,47 +1,52 @@
 
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { DataTable } from 'react-native-paper';
+import { StyleSheet, View,ScrollView } from 'react-native';
+import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
+import { COLORS } from '../core/COLORS'
 
-export default function BasicTable() {
-  return (
-<DataTable style={styles.container}>
-      <DataTable.Header style={styles.tableHeader}>
-        <DataTable.Title>Name</DataTable.Title>
-        <DataTable.Title>Favourite Food</DataTable.Title>
-        <DataTable.Title>Age</DataTable.Title>
-      </DataTable.Header>
-      <DataTable.Row>
-        <DataTable.Cell>Radhika</DataTable.Cell>
-        <DataTable.Cell>Dosa</DataTable.Cell>
-        <DataTable.Cell>23</DataTable.Cell>
-      </DataTable.Row>
+export default function BasicTable({route}) {
+    
+const id = route.params.id;
+
+const CONTENT = {
+    tableHead: ['Team', 'PL', 'W', 'D','L', 'GD', 'Pts'],
+    //tableTitle: ['Row', 'Row 2', 'Row 3', 'Row 4'],
+    tableData: [
+      ['1', '2', '3','1', '2', '3','1'],
+      ['1', '2', '3','1', '2', '3','1'],
+      ['1', '2', '3','1', '2', '3','1'],
+      ['1', '2', '3','1', '2', '3','1'],
+    ],
+  };
   
-      <DataTable.Row>
-        <DataTable.Cell>Krishna</DataTable.Cell>
-        <DataTable.Cell>Uttapam</DataTable.Cell>
-        <DataTable.Cell>26</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>Vanshika</DataTable.Cell>
-        <DataTable.Cell>Brownie</DataTable.Cell>
-        <DataTable.Cell>20</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>Teena</DataTable.Cell>
-        <DataTable.Cell>Pizza</DataTable.Cell>
-        <DataTable.Cell>24</DataTable.Cell>
-      </DataTable.Row>
-    </DataTable>
+return (
+    <View style={styles.container}>
+      <Table borderStyle={{ borderWidth: 1 }}>
+        <Row
+          data={CONTENT.tableHead}
+          flexArr={[4]}
+          style={styles.head}
+          textStyle={styles.text}
+        />
+        <TableWrapper style={styles.wrapper}>
+
+          <Rows
+            data={CONTENT.tableData}
+            flexArr={[4]}
+            style={styles.row}
+            textStyle={styles.text}
+          />
+        </TableWrapper>
+      </Table>
+    </View>
   );
-};
-  
+}
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-  },
-  tableHeader: {
-    backgroundColor: '#DCDCDC',
-  },
+  container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor},
+  head: { height: 40, backgroundColor: COLORS.primaryColor },
+  wrapper: { flexDirection: 'row' },
+  title: { flex: 1, backgroundColor: '#2ecc71' },
+  row: { height: 28 },
+  text: { textAlign: 'center',color:COLORS.secondaryColor },
 });
