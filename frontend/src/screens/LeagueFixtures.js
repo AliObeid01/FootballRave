@@ -36,7 +36,6 @@ useEffect(() => {
 return (  
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
       {fixtures.map((fix) => {
-        //console.log(new Date(fix.date.substr(0,10))<new Date('2022-11-01'))
         if(fix.status=='FT'){
         return (
         <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>

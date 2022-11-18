@@ -36,32 +36,29 @@ export default function TopScores({route}) {
         Data.push([score])
     })} 
     const CONTENT = {
-        tableHead: ['Top Scores'],
-        tableData: Data,    
+        tableHead: ['Top Scores'],    
     };
     
     return (
-        <ScrollView>
+    <ScrollView style={{backgroundColor:COLORS.InputColor}}>
     <View style={styles.container}>
     <Table>
         <Row
         data={CONTENT.tableHead}
-        //flexArr={[2,1,1]}
         style={styles.head}
         textStyle={styles.text}
         />
         <TableWrapper style={styles.wrapper}>
         {TopScores.map((score) => {
         return(
-            <View style={styles.row}>
+        <View style={styles.row}>
             <Avatar  size="small" rounded source={{uri:score.photo}}/>
-                <Text style={styles.rowText}>{score.name}</Text>
-                <Avatar  size="small" rounded source={{uri:score.logo}}/>
-                <Text style={styles.rowText}>{score.goals} <Ionicons name='football-outline' size={13} /></Text>
-                
-            </View>
+            <Text style={styles.rowText}>{score.name}</Text>
+            <Avatar  size="small" rounded source={{uri:score.logo}}/>
+            <Text style={styles.rowText}>{score.goals} <Ionicons name='football-outline' size={13} /></Text>
+         </View>
         )
-    })} 
+       })} 
         </TableWrapper>
     </Table>
     </View>
