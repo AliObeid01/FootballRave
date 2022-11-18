@@ -133,7 +133,7 @@ const getLeagueTopScores = async (req,res) => {
     for(i=0;i<response.data.response.length;i++){
       let name=response.data.response[i].player.name;
       let photo=response.data.response[i].player.photo;
-      let logo=response.data.response[i].statistics[0].league.logo;
+      let logo=response.data.response[i].statistics[0].team.logo;
       let goals=response.data.response[i].statistics[0].goals.total;
 
       TopScores.push({name,photo,logo,goals})
@@ -145,10 +145,40 @@ const getLeagueTopScores = async (req,res) => {
   res.json({data:TopScores});
 }
 
+const getLeagueTopAssists = async (req,res) => {
+  
+  const Assists = {
+    method: 'GET',
+    url: 'https://api-football-v1.p.rapidapi.com/v3/players/topassists',
+    params: {season: '2022', league: req.body.league_id},
+    headers: {
+      'X-RapidAPI-Key': '8cdff61333mshda0c85114bfdbdep18ff1ejsn7e52e5f6effe',
+      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+    }
+  };
+
+  const TopAssits=[];
+  await axios.request(Assists).then(function (response) {
+    for(i=0;i<response.data.response.length;i++){
+      let name=response.data.response[i].player.name;
+      let photo=response.data.response[i].player.photo;
+      let logo=response.data.response[i].statistics[0].team.logo;
+      let goals=response.data.response[i].statistics[0].goals.total;
+
+      TopScores.push({name,photo,logo,goals})
+    }
+  }).catch(function (error) {
+      console.error(error);
+  });
+  
+  res.json({data:TopAssits});
+}
+
 module.exports = {
   getLeagues,
   getLeagueTeams,
   getLeagueFixtures,
   getLeagueStandings,
-  getLeagueTopScores
+  getLeagueTopScores,
+  getLeagueTopAssists
 }
