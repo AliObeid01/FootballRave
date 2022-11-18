@@ -21,7 +21,7 @@ const Card = (props) => {
     )
   }else if(props.icon ==='newspaper-outline'){
     return (    
-      <TouchableOpacity style={styles.card}>
+      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(props.screenName,{title: props.title,league_id:props.id})}>
           <Ionicons style={styles.text} name={props.icon} size={50} />
           <Text style={styles.text}>{props.title}</Text>
      </TouchableOpacity> 
