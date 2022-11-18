@@ -11,7 +11,7 @@ export default function LeagueFixtures({route}) {
 
 const [fixtures, setFixtures] = useState([]);
 const league_id = route.params.league_id;
-console.log(league_id)
+
 const data={
     league_id   
 }  

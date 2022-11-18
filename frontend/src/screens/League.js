@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet,View } from 'react-native'
 import { COLORS } from '../core/COLORS'
 import Card from '../components/Card'
 
@@ -8,7 +8,7 @@ export default function League({route}) {
 return (
   
   <View style={styles.container} >
-    <Card screenName='TableScreen' title="Table" icon='table'/>
+    <Card screenName='TableScreen' title="Table" icon='table' id={id}/>
     <Card screenName='Teams' title="Teams" icon='team' id={id}/>
     <Card screenName='LeagueFixtures' title="Fixtures" icon='soccer-field' id={id}/>
     <Card title="News" icon='newspaper-outline'/>
