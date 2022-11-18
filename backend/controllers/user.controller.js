@@ -132,8 +132,10 @@ const getLeagueTopScores = async (req,res) => {
   await axios.request(Scores).then(function (response) {
     for(i=0;i<response.data.response.length;i++){
       let name=response.data.response[i].player.name;
+      let photo=response.data.response[i].player.photo;
+      let goals=response.data.response[i].statistics[0].goals.total;
 
-      TopScores.push({name})
+      TopScores.push({name,photo,goals})
     }
   }).catch(function (error) {
       console.error(error);
