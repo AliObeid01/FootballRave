@@ -133,9 +133,10 @@ const getLeagueTopScores = async (req,res) => {
     for(i=0;i<response.data.response.length;i++){
       let name=response.data.response[i].player.name;
       let photo=response.data.response[i].player.photo;
+      let logo=response.data.response[i].statistics[0].league.logo;
       let goals=response.data.response[i].statistics[0].goals.total;
 
-      TopScores.push({name,photo,goals})
+      TopScores.push({name,photo,logo,goals})
     }
   }).catch(function (error) {
       console.error(error);
