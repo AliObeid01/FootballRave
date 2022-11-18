@@ -98,15 +98,16 @@ const getLeagueStandings = async (req,res) => {
   const leagueStandings=[];
   await axios.request(standings).then(function (response) {
     for(i=0;i<response.data.response[0].league['standings'][0].length;i++){
+      let rank=response.data.response[0].league['standings'][0][i].rank;
       let name=response.data.response[0].league['standings'][0][i].team.name;
       let logo=response.data.response[0].league['standings'][0][i].team.logo;
       let points=response.data.response[0].league['standings'][0][i].points;
-      let GD=response.data.response[0].league['standings'][0][i].goalsDiff;
+      let gd=response.data.response[0].league['standings'][0][i].goalsDiff;
       let played=response.data.response[0].league['standings'][0][i].all.played;
       let win=response.data.response[0].league['standings'][0][i].all.win;
       let draw=response.data.response[0].league['standings'][0][i].all.draw;
       let lose=response.data.response[0].league['standings'][0][i].all.lose;
-      leagueStandings.push({name,logo,points,GD,played,win,draw,lose})
+      leagueStandings.push({rank,name,logo,points,gd,played,win,draw,lose})
     }
   }).catch(function (error) {
       console.error(error);
