@@ -116,9 +116,36 @@ const getLeagueStandings = async (req,res) => {
   res.json({data:leagueStandings});
 }
 
+const getLeagueTopScores = async (req,res) => {
+  
+  const Scores = {
+    method: 'GET',
+    url: 'https://api-football-v1.p.rapidapi.com/v3/players/topscorers',
+    params: {season: '2022', league: req.body.league_id},
+    headers: {
+      'X-RapidAPI-Key': '8cdff61333mshda0c85114bfdbdep18ff1ejsn7e52e5f6effe',
+      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+    }
+  };
+
+  const TopScores=[];
+  await axios.request(Scores).then(function (response) {
+    for(i=0;i<response.data.response.length;i++){
+      let name=response.data.response[i].player.name;
+
+      TopScores.push({name})
+    }
+  }).catch(function (error) {
+      console.error(error);
+  });
+  
+  res.json({data:TopScores});
+}
+
 module.exports = {
   getLeagues,
   getLeagueTeams,
   getLeagueFixtures,
-  getLeagueStandings
+  getLeagueStandings,
+  getLeagueTopScores
 }
