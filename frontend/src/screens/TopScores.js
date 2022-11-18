@@ -1,103 +1,91 @@
 import React from 'react';
-import { StyleSheet, View,SectionList,Text} from 'react-native';
+import { StyleSheet, View,ScrollView,Text} from 'react-native';
 import { Avatar } from "react-native-elements"
 import { COLORS } from '../core/COLORS'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { useEffect, useState } from "react"
+import { Table, TableWrapper, Row, Rows} from 'react-native-table-component';
+import Ionicons from '@expo/vector-icons/Ionicons'
 
 export default function TopScores({route}) {
-     
-    const state = {
-        data: [
-          {
-            title: "Top Scores",
-            data: [
-              "Processes & Threads",
-              "Memory Management",
-              "CPU Scheduling",
-              "Process Synchronization",
-              "Deadlock",
-            ],
-          },
-          {
-            title: "Top Assists",
-            data: [
-              "Data Link Layer",
-              "Network Layer",
-              "Transport Layer",
-              "Application Layer",
-              "Network Security",
-            ],
-          },
-          {
-            title: "Top Red Cards",
-            data: [
-                "Data Link Layer",
-                "Network Layer",
-                "Transport Layer",
-                "Application Layer",
-                "Network Security",
-            ],
-          },
-          {
-            title: "Top Yellow Cards",
-            data: [
-                "Data Link Layer",
-                "Network Layer",
-                "Transport Layer",
-                "Application Layer",
-                "Network Security",
-            ],
-          },
-        ],
-      };
-      
-       
-        return (
-          <View style={styles.screen}>
-            
-            <SectionList
-              sections={state.data}
-              keyExtractor={(item, index) => item + index}
-              renderItem={({ item }) => (
-                <View style={styles.row}>
-                <Avatar  size="small" rounded source={require('../assets/news.jpg')}/>
-                <Text style={styles.rowText}>{item}</Text>
-                <Text style={styles.rowText}>1</Text>
-                </View>
-              )}
-              renderSectionHeader={({ section: { title } }) => (
-                <Text style={styles.header}>{title}</Text>
-              )}
-            />
-          </View>
-        );
-      
-    }
+    const [TopScores, setTopScores] = useState([]);
+    const league_id = route.params.league_id;
+    const data={
+        league_id   
+    }  
+    useEffect(() => {
+        const getTopScores= async ()=>{
+        const token = await AsyncStorage.getItem('@token')
+        axios({
+            method: "POST",
+            data,
+            url: `http://192.168.1.50:5000/user/TopScores`,
+            headers:{
+            "Authorization" : "Bearer " +token
 
-    const styles = StyleSheet.create({
-      screen: {
-        backgroundColor:COLORS.InputColor
-      },
-      header: {
-        fontSize: 20,
-        color: COLORS.secondaryColor,
-        marginTop: 10,
-        padding: 2,
-        backgroundColor: COLORS.primaryColor,
-        textAlign: "center",
-      },
-      row: {
-        marginHorizontal: 10,
-        marginTop: 10,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        paddingHorizontal: 2,
-      },
-      rowText: {
-        fontSize: 18,
-        color: COLORS.secondaryColor,
-      },
-    });
+            }
+        }).then((res) => {
+            setTopScores(res.data.data);
+        });
+        }
+        getTopScores();
+    }, []);
+    const Data= []
+    {TopScores.map((score) => {
+        Data.push([score])
+    })} 
+    const CONTENT = {
+        tableHead: ['Top Scores'],
+        tableData: Data,    
+    };
+    
+    return (
+        <ScrollView>
+    <View style={styles.container}>
+    <Table>
+        <Row
+        data={CONTENT.tableHead}
+        //flexArr={[2,1,1]}
+        style={styles.head}
+        textStyle={styles.text}
+        />
+        <TableWrapper style={styles.wrapper}>
+        {TopScores.map((score) => {
+        return(
+            <View style={styles.row}>
+            <Avatar  size="small" rounded source={{uri:score.photo}}/>
+                <Text style={styles.rowText}>{score.name}</Text>
+                <Avatar  size="small" rounded source={{uri:score.logo}}/>
+                <Text style={styles.rowText}>{score.goals} <Ionicons name='football-outline' size={13} /></Text>
+                
+            </View>
+        )
+    })} 
+        </TableWrapper>
+    </Table>
+    </View>
+    </ScrollView>
+    );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor},
+  head: { height: 40, backgroundColor: COLORS.primaryColor },
+  wrapper: {backgroundColor: COLORS.primaryColor },
+  text: { textAlign: 'center',color:COLORS.secondaryColor },
+  row: {
+    marginHorizontal: 15,
+    marginTop: 5,
+    height: 50,
+    flexDirection: "row",
+    justifyContent: 'space-between',
+    paddingHorizontal: 1, 
+  },
+  rowText: {
+    flex: 1, 
+    fontSize: 14,
+    color: COLORS.secondaryColor,
+    textAlign: 'center',
+  },
+});

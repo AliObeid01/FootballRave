@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View} from 'react-native';
-import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
+import { Table, TableWrapper, Row, Rows} from 'react-native-table-component';
 import { COLORS } from '../core/COLORS'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
