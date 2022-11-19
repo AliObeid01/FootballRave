@@ -33,7 +33,7 @@ function MatchScreen() {
       });
     }
     getLiveMatches();
-  }, []);
+  }, [liveMatches]);
 
   return (
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
