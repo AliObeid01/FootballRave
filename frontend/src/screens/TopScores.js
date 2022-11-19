@@ -112,12 +112,13 @@ const styles = StyleSheet.create({
   wrapper: {backgroundColor: COLORS.primaryColor },
   text: { textAlign: 'center',color:COLORS.secondaryColor },
   row: {
-    marginHorizontal: 15,
+    //marginHorizontal: 10,
     marginTop: 5,
     height: 50,
     flexDirection: "row",
     justifyContent: 'space-between',
-    paddingHorizontal: 1, 
+    //paddingHorizontal: 1,
+    paddingStart:40
   },
   rowText: {
     flex: 1, 
