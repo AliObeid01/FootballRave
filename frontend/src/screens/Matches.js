@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from "react"
-import { ScrollView, View,Text} from 'react-native'
+import {ActivityIndicator, ScrollView, View,Text} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS } from '../core/COLORS'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
@@ -34,7 +34,7 @@ function MatchScreen() {
     }
     getLiveMatches();
   }, [liveMatches]);
- //console.log(liveMatches)
+
     if(liveMatches.length==0){
     return (
       <View style={{backgroundColor:COLORS.InputColor,height:'100%'}}>
@@ -59,7 +59,7 @@ function MatchScreen() {
  function LeaguesScreen(){
 
   const [legs, setLeg] = useState([]);
-
+  
   useEffect(() => {
     const getleagues= async ()=>{
       const token = await AsyncStorage.getItem('@token')
@@ -88,13 +88,11 @@ function MatchScreen() {
   );
 }
 
-function NewsScreen() {
+function ChatScreen() {
   return (
-    <ScrollView style={{backgroundColor:COLORS.InputColor}}>
-      <NewsCard screenName='NewsDetails' path={require('../assets/news.jpg')}/>
-      <NewsCard screenName='NewsDetails' path={require('../assets/news.jpg')}/>
-      <NewsCard screenName='NewsDetails' path={require('../assets/2.jpg')}/>
-    </ScrollView>
+    <View style={{backgroundColor:COLORS.InputColor,height:'100%'}}>
+    <Text style={{color:COLORS.secondaryColor,fontSize:15,textAlign:'center',marginTop:250}}>Still working on this Feature it will implemented soon.Thank you for your Time</Text>
+    </View>
   );
 }
 
@@ -117,8 +115,8 @@ export default function Matches() {
           return <Entypo style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='trophy' size={25} />
         }else if(route.name === 'Following'){
           return <Entypo style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='star' size={25} />
-        }else if(route.name === 'News'){
-          return <Ionicons style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='newspaper-outline' size={25} />
+        }else if(route.name === 'ChatRoom'){
+          return <Ionicons style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='chatbubbles' size={25} />
         }
         return <MaterialIcons style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='batch-prediction' size={25} />
       },
@@ -132,7 +130,7 @@ export default function Matches() {
   })}>
       <Tab.Screen name="Live Matches" component={MatchScreen}/>
       <Tab.Screen name="Leagues" component={LeaguesScreen}/>
-      <Tab.Screen name="News" component={NewsScreen} />
+      <Tab.Screen name="ChatRoom" component={ChatScreen} />
       <Tab.Screen name="Prediction" component={PredictionScreen} />
 
     </Tab.Navigator>
