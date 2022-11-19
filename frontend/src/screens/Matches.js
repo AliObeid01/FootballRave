@@ -40,7 +40,7 @@ function MatchScreen() {
       {liveMatches.map((live) => {
       return(
         <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
-        <FixtureCard name={live.league+'-'+live.status+' '+live.time+'"'}/>    
+        <FixtureCard name={live.league+'-'+live.status+' '+live.time+'"'} league={{uri:live.leaguelogo}}/>    
         <MatchCard time={live.homegoals+' - '+live.awaygoals} screenName='MatchDetails' team1={live.home} team2={live.away} team1Avatar={{uri:live.homelogo}} team2Avatar={{uri:live.awaylogo}}/>
         </View>
        )
