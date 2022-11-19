@@ -189,7 +189,7 @@ const getLiveMatches = async (req,res) => {
   const liveMatches=[];
   await axios.request(live).then(function (response) {
     for(i=0;i<response.data.response.length;i++){
-      let status=response.data.response[i].fixture.status.short;
+      let status=response.data.response[i].fixture.status.long;
       let time=response.data.response[i].fixture.status.elapsed;
       let league=response.data.response[i].league.name;
       let leaguelogo=response.data.response[i].league.logo;
