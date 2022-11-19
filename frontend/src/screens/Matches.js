@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from "react"
-import { ScrollView, View} from 'react-native'
+import { ScrollView, View,Text} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS } from '../core/COLORS'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
@@ -34,10 +34,17 @@ function MatchScreen() {
     }
     getLiveMatches();
   }, [liveMatches]);
-
+ //console.log(liveMatches)
+    if(liveMatches.length==0){
+    return (
+      <View style={{backgroundColor:COLORS.InputColor,height:'100%'}}>
+      <Text style={{color:COLORS.secondaryColor,fontSize:20,textAlign:'center',marginTop:250}}>No Ongiong Matches</Text>
+      </View>
+    )
+    }
   return (
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
-      {liveMatches.map((live) => {
+      {liveMatches.map((live) => {  
       return(
         <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
         <FixtureCard name={live.league+'-'+live.status+' '+live.time+'"'} league={{uri:live.leaguelogo}}/>    
