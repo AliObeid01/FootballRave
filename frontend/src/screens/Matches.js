@@ -9,30 +9,43 @@ import Entypo from '@expo/vector-icons/Entypo'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import NewsCard from '../components/NewsCard'
 import LeagueCard from '../components/LeagueCard'
-import LeagueMatchCard from '../components/LeagueMatchCard'
+import FixtureCard from '../components/FixtureCard'
 import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
 function MatchScreen() {
 
+  const [liveMatches, setLiveMatches] = useState([]);
+
+  useEffect(() => {
+    const getLiveMatches= async ()=>{
+      const token = await AsyncStorage.getItem('@token')
+      axios({
+        method: "GET",
+        url: `http://192.168.1.50:5000/user/live`,
+        headers:{
+          "Authorization" : "Bearer " +token
+  
+         }
+      }).then((res) => {
+        setLiveMatches(res.data.data); 
+      });
+    }
+    getLiveMatches();
+  }, []);
+
+
   return (
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
-      <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
-        <LeagueMatchCard name='La Liga' screenName='League' path={require('../assets/laliga.png')}/>
-        <MatchCard time='10:00 pm' screenName='MatchDetails' team1='Real Madrid' team2='Barcelona' team1Avatar={require('../assets/real.png')} team2Avatar={require('../assets/Barcelona.jpg')}/>
-        <MatchCard time='10:00 pm' screenName='MatchDetails' team1='Real Madrid' team2='Barcelona' team1Avatar={require('../assets/real.png')} team2Avatar={require('../assets/Barcelona.jpg')}/>
-      </View>
-      <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
-        <LeagueMatchCard name='Premier League' screenName='League' path={require('../assets/PL-Lion.png')}/>
-        <MatchCard time='10:00 pm' screenName='MatchDetails' team1='Man UTD' team2='Man City' team1Avatar={require('../assets/man.png')} team2Avatar={require('../assets/city.jpg')}/>
-        <MatchCard time='10:00 pm' screenName='MatchDetails' team1='Man UTD' team2='Man City' team1Avatar={require('../assets/man.png')} team2Avatar={require('../assets/city.jpg')}/>
-      </View>
-      <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
-        <LeagueMatchCard name='Serie A' screenName='League' path={require('../assets/seriaA.jpg')}/>
-        <MatchCard time='10:00 pm' screenName='MatchDetails' team1='Ac Milan' team2='Inter Milan' team1Avatar={require('../assets/milan.png')} team2Avatar={require('../assets/inter.png')}/>
-        <MatchCard time='10:00 pm' screenName='MatchDetails' team1='Ac Milan' team2='Inter Milan' team1Avatar={require('../assets/milan.png')} team2Avatar={require('../assets/inter.png')}/>
-      </View>
+      {liveMatches.map((live) => {
+      return(
+        <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
+        <FixtureCard name={live.league+'-'+live.status+' '+live.time+'"' }/>    
+        <MatchCard time={live.homegoals+' - '+live.awaygoals} screenName='MatchDetails' team1={live.home} team2={live.away} team1Avatar={{uri:live.homelogo}} team2Avatar={{uri:live.awaylogo}}/>
+        </View>
+       )
+     })}  
     </ScrollView>
   );
 }
@@ -92,7 +105,7 @@ export default function Matches() {
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
       tabBarIcon: ({ focused }) => {
-        if (route.name === 'Matches') {
+        if (route.name === 'Live Matches') {
           return <MaterialCommunityIcons style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='soccer-field' size={25} />
         }else if(route.name === 'Leagues'){
           return <Entypo style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='trophy' size={25} />
@@ -111,7 +124,7 @@ export default function Matches() {
       headerStyle: {backgroundColor:COLORS.primaryColor},
       headerTintColor:  COLORS.secondaryColor
   })}>
-      <Tab.Screen name="Matches" component={MatchScreen}/>
+      <Tab.Screen name="Live Matches" component={MatchScreen}/>
       <Tab.Screen name="Leagues" component={LeaguesScreen}/>
       <Tab.Screen name="News" component={NewsScreen} />
       <Tab.Screen name="Prediction" component={PredictionScreen} />

@@ -7,9 +7,11 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 import { useEffect, useState } from "react"
 import { Table, TableWrapper, Row, Rows} from 'react-native-table-component';
 import Ionicons from '@expo/vector-icons/Ionicons'
+import Icon from '@expo/vector-icons/MaterialCommunityIcons'
 
 export default function TopScores({route}) {
     const [TopScores, setTopScores] = useState([]);
+    const [TopAssist, setTopAssist] = useState([]);
     const league_id = route.params.league_id;
     const data={
         league_id   
@@ -31,12 +33,28 @@ export default function TopScores({route}) {
         }
         getTopScores();
     }, []);
-    const Data= []
-    {TopScores.map((score) => {
-        Data.push([score])
-    })} 
+
+    useEffect(() => {
+        const getTopAssist= async ()=>{
+        const token = await AsyncStorage.getItem('@token')
+        axios({
+            method: "POST",
+            data,
+            url: `http://192.168.1.50:5000/user/TopAssists`,
+            headers:{
+            "Authorization" : "Bearer " +token
+
+            }
+        }).then((res) => {
+            setTopAssist(res.data.data);
+        });
+        }
+        getTopAssist();
+    }, []);
+
     const CONTENT = {
-        tableHead: ['Top Scores'],    
+        scores: ['Top Scores'],
+        assist: ['Top Assists'],    
     };
     
     return (
@@ -44,7 +62,7 @@ export default function TopScores({route}) {
     <View style={styles.container}>
     <Table>
         <Row
-        data={CONTENT.tableHead}
+        data={CONTENT.scores}
         style={styles.head}
         textStyle={styles.text}
         />
@@ -62,12 +80,34 @@ export default function TopScores({route}) {
         </TableWrapper>
     </Table>
     </View>
+
+    <View style={styles.container}>
+    <Table>
+        <Row
+        data={CONTENT.assist}
+        style={styles.head}
+        textStyle={styles.text}
+        />
+        <TableWrapper style={styles.wrapper}>
+        {TopAssist.map((assist) => {
+        return(
+        <View style={styles.row}>
+            <Avatar  size="small" rounded source={{uri:assist.photo}}/>
+            <Text style={styles.rowText}>{assist.name}</Text>
+            <Avatar  size="small" rounded source={{uri:assist.logo}}/>
+            <Text style={styles.rowText}>{assist.assists} <Icon name='shoe-cleat' size={13} /></Text>
+         </View>
+        )
+       })} 
+        </TableWrapper>
+    </Table>
+    </View>
     </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor},
+  container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor,paddingBottom:4},
   head: { height: 40, backgroundColor: COLORS.primaryColor },
   wrapper: {backgroundColor: COLORS.primaryColor },
   text: { textAlign: 'center',color:COLORS.secondaryColor },
