@@ -163,9 +163,9 @@ const getLeagueTopAssists = async (req,res) => {
       let name=response.data.response[i].player.name;
       let photo=response.data.response[i].player.photo;
       let logo=response.data.response[i].statistics[0].team.logo;
-      let goals=response.data.response[i].statistics[0].goals.total;
+      let assists=response.data.response[i].statistics[0].goals.assists;
 
-      TopScores.push({name,photo,logo,goals})
+      TopAssits.push({name,photo,logo,assists})
     }
   }).catch(function (error) {
       console.error(error);
@@ -174,11 +174,41 @@ const getLeagueTopAssists = async (req,res) => {
   res.json({data:TopAssits});
 }
 
+const getLiveMatches = async (req,res) => {
+  
+  const live = {
+    method: 'GET',
+    url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
+    params: {live: 'all'},
+    headers: {
+      'X-RapidAPI-Key': '8cdff61333mshda0c85114bfdbdep18ff1ejsn7e52e5f6effe',
+      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+    }
+  };
+
+  const liveMatches=[];
+  await axios.request(live).then(function (response) {
+    for(i=0;i<response.data.response.length;i++){
+      let name=response.data.response[i].player.name;
+      let photo=response.data.response[i].player.photo;
+      let logo=response.data.response[i].statistics[0].team.logo;
+      let assists=response.data.response[i].statistics[0].goals.assists;
+
+      TopAssits.push({name,photo,logo,assists})
+    }
+  }).catch(function (error) {
+      console.error(error);
+  });
+  
+  res.json({data:liveMatches});
+}
+
 module.exports = {
   getLeagues,
   getLeagueTeams,
   getLeagueFixtures,
   getLeagueStandings,
   getLeagueTopScores,
-  getLeagueTopAssists
+  getLeagueTopAssists,
+  getLiveMatches
 }
