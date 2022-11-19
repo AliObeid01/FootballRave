@@ -19,10 +19,10 @@ const Card = (props) => {
           <Text style={styles.text}>{props.title}</Text>
      </TouchableOpacity> 
     )
-  }else if(props.icon ==='newspaper-outline'){
+  }else if(props.icon ==='linechart'){
     return (    
       <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(props.screenName,{title: props.title,league_id:props.id})}>
-          <Ionicons style={styles.text} name={props.icon} size={50} />
+          <AntDesign style={styles.text} name={props.icon} size={50} />
           <Text style={styles.text}>{props.title}</Text>
      </TouchableOpacity> 
     )
