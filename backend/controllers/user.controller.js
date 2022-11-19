@@ -189,12 +189,19 @@ const getLiveMatches = async (req,res) => {
   const liveMatches=[];
   await axios.request(live).then(function (response) {
     for(i=0;i<response.data.response.length;i++){
-      let name=response.data.response[i].player.name;
-      let photo=response.data.response[i].player.photo;
-      let logo=response.data.response[i].statistics[0].team.logo;
-      let assists=response.data.response[i].statistics[0].goals.assists;
+      let status=response.data.response[i].fixture.status.short;
+      let time=response.data.response[i].fixture.status.elapsed;
+      let league=response.data.response[i].league.name;
+      let leaguelogo=response.data.response[i].league.logo;
+      let home=response.data.response[i].teams.home.name;
+      let homelogo=response.data.response[i].teams.home.logo;
+      let away=response.data.response[i].teams.away.name;
+      let awaylogo=response.data.response[i].teams.away.logo;
+      let homegoals=response.data.response[i].goals.home;
+      let awaygoals=response.data.response[i].goals.away;
 
-      TopAssits.push({name,photo,logo,assists})
+
+      liveMatches.push({status,time,league,leaguelogo,home,homelogo,away,awaylogo,homegoals,awaygoals})
     }
   }).catch(function (error) {
       console.error(error);

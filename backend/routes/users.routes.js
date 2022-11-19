@@ -9,6 +9,6 @@ router.post('/league_fixtures', authUserMiddleware, getLeagueFixtures);
 router.post('/league_standings', authUserMiddleware, getLeagueStandings);
 router.post('/TopScores', authUserMiddleware, getLeagueTopScores);
 router.post('/TopAssists', authUserMiddleware, getLeagueTopAssists);
-router.post('/live', authUserMiddleware, getLiveMatches);
+router.get('/live', authUserMiddleware, getLiveMatches);
 
 module.exports = router;
