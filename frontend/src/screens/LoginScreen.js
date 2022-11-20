@@ -36,7 +36,7 @@ export default function LoginScreen({ navigation }) {
       await axios({       
         method: "POST",
         data,
-        url: "http://192.168.1.50:5000/auth/signin",
+        url: "http://192.168.43.250:5000/auth/signin",
         headers:{
           'Content-Type': 'application/x-www-form-urlencoded',
           }
