@@ -3,8 +3,54 @@ import { StyleSheet,View,Text } from 'react-native'
 import { COLORS } from '../core/COLORS'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-const Tab = createMaterialTopTabNavigator();
 
+function Matches() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home!</Text>
+    </View>
+  );
+}
+
+function LineUp() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
+function Squad() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home!</Text>
+    </View>
+  );
+}
+
+function Transfers() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
+function Statistics() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home!</Text>
+    </View>
+  );
+}
+
+function LastMatches() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
+
+const Tab = createMaterialTopTabNavigator();
 
 export default function Team() {
 
@@ -18,12 +64,12 @@ return (
     tabBarIndicatorStyle:{backgroundColor:COLORS.secondaryColor},
     tabBarScrollEnabled:'true'
   }}>
-    <Tab.Screen name="matches" component={HomeScreen} />
-    <Tab.Screen name="lineup" component={SettingsScreen} />
-    <Tab.Screen name="squad" component={HomeScreen} />
-    <Tab.Screen name="transfer" component={SettingsScreen} />
-    <Tab.Screen name="statistics" component={HomeScreen} />
-    <Tab.Screen name="Last 5 matches" component={SettingsScreen} />
+    <Tab.Screen name="matches" component={Matches} />
+    <Tab.Screen name="lineup" component={LineUp} />
+    <Tab.Screen name="squad" component={Squad} />
+    <Tab.Screen name="transfer" component={Transfers} />
+    <Tab.Screen name="statistics" component={Statistics} />
+    <Tab.Screen name="Last 5 matches" component={LastMatches} />
   </Tab.Navigator>
   )
 }
