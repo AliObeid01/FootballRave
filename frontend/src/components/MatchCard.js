@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native'
 const MatchCard = (props) => {
 const navigation = useNavigation()
   return (
-    <TouchableOpacity delayPressIn={70} style={styles.matchCon} onPress={() => navigation.navigate(props.screenName)}>
+    <TouchableOpacity style={styles.matchCon} onPress={() => navigation.navigate(props.screenName)}>
         <Text style={styles.matchText}>{props.team1}</Text>
         <Avatar  size="small" rounded source={props.team1Avatar}/>
         <Text style={{color: COLORS.fontPrimary,padding:5}}>{props.time}</Text>
