@@ -7,7 +7,7 @@ import { COLORS } from './src/core/COLORS'
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import { useState, useEffect, useRef } from 'react';
-import { Text, View, Button, Platform } from 'react-native';
+import { Platform } from 'react-native';
 
 
 import {
@@ -15,7 +15,6 @@ import {
   RegisterScreen,
   ResetPasswordScreen,
   Matches,
-  NewsDetails,
   League,
   Teams,
   Team,
@@ -23,7 +22,6 @@ import {
   LeagueFixtures,
   TableScreen,
   TopScores
-
 } from './src/screens'
 
 
@@ -75,8 +73,6 @@ export default function App() {
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen}/>
           <Stack.Screen name="Matches" component={Matches}/>
-          <Stack.Screen options={({route}) =>({headerShown: true,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
-            name="NewsDetails" component={NewsDetails}/>
           <Stack.Screen options={({route}) =>({headerShown: true,headerRight: () => (<HeaderIcons/>),id:route.params.id, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="League" component={League}/>
           <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
