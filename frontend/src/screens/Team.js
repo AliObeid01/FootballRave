@@ -10,7 +10,14 @@ export default function Team() {
 
 return (
     
-  <Tab.Navigator >
+  <Tab.Navigator  screenOptions={{
+    tabBarActiveTintColor: COLORS.secondaryColor,
+    tabBarLabelStyle: { fontSize: 12 },
+    tabBarItemStyle: { width: 140,height:50},
+    tabBarStyle: { backgroundColor: COLORS.primaryColor },
+    tabBarIndicatorStyle:{backgroundColor:COLORS.secondaryColor},
+    tabBarScrollEnabled:'true'
+  }}>
     <Tab.Screen name="matches" component={HomeScreen} />
     <Tab.Screen name="lineup" component={SettingsScreen} />
     <Tab.Screen name="squad" component={HomeScreen} />
