@@ -274,7 +274,7 @@ const getTeamTransfers = async (req,res) => {
   
   const transfers = {
     method: 'GET',
-    url: 'https://api-football-v1.p.rapidapi.com/v3/players/squads',
+    url: 'https://api-football-v1.p.rapidapi.com/v3/transfers',
     params: {team: req.body.team_id},
     headers: {
       'X-RapidAPI-Key': '8cdff61333mshda0c85114bfdbdep18ff1ejsn7e52e5f6effe',
@@ -284,13 +284,17 @@ const getTeamTransfers = async (req,res) => {
 
   const TeamTransfers=[];
   await axios.request(transfers).then(function (response) {
-    for(i=0;i<response.data.response[0].players.length;i++){
-      let id=response.data.response[0].players[i].id;
-      let name=response.data.response[0].players[i].name;
-      let position=response.data.response[0].players[i].position;
-      let photo=response.data.response[0].players[i].photo;
+    for(i=0;i<response.data.response.length;i++){
+      let id=response.data.response[i].player.id;
+      let name=response.data.response[i].player.name;
+      let type=response.data.response[i].transfers[0].type;
+      let player_in_name=response.data.response[i].transfers[0].teams.in.name;
+      let player_in_logo=response.data.response[i].transfers[0].teams.in.logo;
+      let player_out_name=response.data.response[i].transfers[0].teams.out.name;
+      let player_out_logo=response.data.response[i].transfers[0].teams.out.name;
+      
 
-      TeamTransfers.push({id,name,position,photo})
+      TeamTransfers.push({id,name,type,player_in_name,player_in_logo,player_out_name,player_out_logo})
     }
   }).catch(function (error) {
       console.error(error);
