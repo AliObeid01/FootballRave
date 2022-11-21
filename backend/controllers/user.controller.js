@@ -255,21 +255,48 @@ const getTeamSquad = async (req,res) => {
 
   const TeamSquad=[];
   await axios.request(squad).then(function (response) {
-    for(i=0;i<response.data.response.length;i++){
-      let id=response.data.response[i].fixture.id;
-      let timezone=response.data.response[i].fixture.timezone;
-      let date=response.data.response[i].fixture.date;
-      let status=response.data.response[i].fixture.status.short;
-      let teams=response.data.response[i].teams;
-      let goals=response.data.response[i].goals;
-      let logo=response.data.response[i].league.logo;
-      TeamSquad.push({id,timezone,date,status,teams,goals,logo})
+    for(i=0;i<response.data.response[0].players.length;i++){
+      let id=response.data.response[0].players[i].id;
+      let name=response.data.response[0].players[i].name;
+      let position=response.data.response[0].players[i].position;
+      let photo=response.data.response[0].players[i].photo;
+
+      TeamSquad.push({id,name,position,photo})
     }
   }).catch(function (error) {
       console.error(error);
   });
   
   res.json({data:TeamSquad});
+}
+
+const getTeamTransfer = async (req,res) => {
+  
+  const transfers = {
+    method: 'GET',
+    url: 'https://api-football-v1.p.rapidapi.com/v3/players/squads',
+    params: {team: req.body.team_id},
+    headers: {
+      'X-RapidAPI-Key': '8cdff61333mshda0c85114bfdbdep18ff1ejsn7e52e5f6effe',
+      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+    }
+  };
+
+  const TeamTransfers=[];
+  await axios.request(transfers).then(function (response) {
+    for(i=0;i<response.data.response[0].players.length;i++){
+      let id=response.data.response[0].players[i].id;
+      let name=response.data.response[0].players[i].name;
+      let position=response.data.response[0].players[i].position;
+      let photo=response.data.response[0].players[i].photo;
+
+      TeamTransfers.push({id,name,position,photo})
+    }
+  }).catch(function (error) {
+      console.error(error);
+  });
+  
+  res.json({data:TeamTransfers});
 }
 
 
@@ -282,5 +309,6 @@ module.exports = {
   getLeagueTopAssists,
   getLiveMatches,
   getTeamFixtures,
-  getTeamSquad
+  getTeamSquad,
+  getTeamTransfer
 }
