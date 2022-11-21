@@ -12,6 +12,6 @@ router.post('/TopAssists', authUserMiddleware, getLeagueTopAssists);
 router.get('/live', authUserMiddleware, getLiveMatches);
 router.post('/team_fixtures', authUserMiddleware, getTeamFixtures);
 router.post('/team_squad', authUserMiddleware, getTeamSquad);
-router.post('/team_squad', authUserMiddleware, getTeamTransfers);
+router.post('/team_transfers', authUserMiddleware, getTeamTransfers);
 
 module.exports = router;
