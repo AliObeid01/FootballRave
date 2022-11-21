@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const {getLeagues,getLeagueTeams,getLeagueFixtures,getLeagueStandings,getLeagueTopScores,getLeagueTopAssists,getLiveMatches,getTeamFixtures,getTeamSquad} = require('../controllers/user.controller');
+const {getLeagues,getLeagueTeams,getLeagueFixtures,getLeagueStandings,getLeagueTopScores,getLeagueTopAssists,getLiveMatches,getTeamFixtures,getTeamSquad,getTeamTransfers} = require('../controllers/user.controller');
 const authUserMiddleware = require('../middlewares/user.middleware');
 const router = Router();
 
@@ -12,5 +12,6 @@ router.post('/TopAssists', authUserMiddleware, getLeagueTopAssists);
 router.get('/live', authUserMiddleware, getLiveMatches);
 router.post('/team_fixtures', authUserMiddleware, getTeamFixtures);
 router.post('/team_squad', authUserMiddleware, getTeamSquad);
+router.post('/team_squad', authUserMiddleware, getTeamTransfers);
 
 module.exports = router;

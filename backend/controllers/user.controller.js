@@ -270,7 +270,7 @@ const getTeamSquad = async (req,res) => {
   res.json({data:TeamSquad});
 }
 
-const getTeamTransfer = async (req,res) => {
+const getTeamTransfers = async (req,res) => {
   
   const transfers = {
     method: 'GET',
@@ -310,5 +310,5 @@ module.exports = {
   getLiveMatches,
   getTeamFixtures,
   getTeamSquad,
-  getTeamTransfer
+  getTeamTransfers
 }
