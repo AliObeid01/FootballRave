@@ -62,7 +62,7 @@ return (
     tabBarItemStyle: { width: 140,height:50},
     tabBarStyle: { backgroundColor: COLORS.primaryColor },
     tabBarIndicatorStyle:{backgroundColor:COLORS.secondaryColor},
-    tabBarScrollEnabled:'true'
+    //tabBarScrollEnabled:'true'
   }}>
     <Tab.Screen name="matches" component={Matches} />
     <Tab.Screen name="lineup" component={LineUp} />

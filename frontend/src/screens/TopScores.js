@@ -22,7 +22,7 @@ export default function TopScores({route}) {
         axios({
             method: "POST",
             data,
-            url: `http://192.168.1.50:5000/user/TopScores`,
+            url: `http://192.168.1.5:5000/user/TopScores`,
             headers:{
             "Authorization" : "Bearer " +token
 
