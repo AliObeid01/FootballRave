@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 const TeamCard = (props) => {
   const navigation = useNavigation()
   return (
-    <TouchableOpacity delayPressIn={70} style={styles.card_template} onPress={() => navigation.navigate(props.screenName,{title: props.name,team_id:props.team_id})}>
+    <TouchableOpacity delayPressIn={70} style={styles.card_template} onPress={() => navigation.navigate(props.screenName,{title: props.name,team_id: props.team_id})}>
           <Image style={styles.card_image} source={props.path}/> 
           <Text style={styles.card_title} >{props.name}</Text> 
     </TouchableOpacity>
