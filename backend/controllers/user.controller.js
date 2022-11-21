@@ -231,7 +231,7 @@ const getTeamFixtures = async (req,res) => {
       let status=response.data.response[i].fixture.status.short;
       let teams=response.data.response[i].teams;
       let goals=response.data.response[i].goals;
-      leagueFixtures.push({id,timezone,date,status,teams,goals})
+      TeamFixtures.push({id,timezone,date,status,teams,goals})
     }
   }).catch(function (error) {
       console.error(error);
