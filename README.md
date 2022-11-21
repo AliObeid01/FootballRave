@@ -13,9 +13,14 @@
 
 <img src="./readme/title2.svg"/>
 
-> The Well app is a mental health and mindfulness app built on top of the science of positive psychology. The Well app is more than just another meditation or journaling app; it encourages you to enhance and reflect on your day with structured, guided activities.
+> FootBallRave gives you all the live scores, stats, and storylines to keep you up to speed with the world of soccer.
 > 
-> There are 5 daily tasks that the Well app asks you to complete each day: record 3 gratitudes, write a journal entry, perform 3 acts of kindness, exercise for 20 minutes, and meditate for 15 minutes.
+> Features include:
+• Live match scores.
+• League details : team,fixtures, tables, and Top Scores.
+• Team details: matches, linup, transfers and squad.
+• Match details: overview,lineup,statistics, head to head nad predictions.
+• Notifications on match start, match end and team scored.
 
 ### User Stories
 - As a user, I want to browse Matches statistics , so that I can find live matches, upcoming matches and the already played.
