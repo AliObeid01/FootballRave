@@ -231,13 +231,45 @@ const getTeamFixtures = async (req,res) => {
       let status=response.data.response[i].fixture.status.short;
       let teams=response.data.response[i].teams;
       let goals=response.data.response[i].goals;
-      TeamFixtures.push({id,timezone,date,status,teams,goals})
+      let logo=response.data.response[i].league.logo;
+      TeamFixtures.push({id,timezone,date,status,teams,goals,logo})
     }
   }).catch(function (error) {
       console.error(error);
   });
   
   res.json({data:TeamFixtures});
+}
+
+const getTeamSquad = async (req,res) => {
+  
+  const squad = {
+    method: 'GET',
+    url: 'https://api-football-v1.p.rapidapi.com/v3/players/squads',
+    params: {team: req.body.team_id},
+    headers: {
+      'X-RapidAPI-Key': '8cdff61333mshda0c85114bfdbdep18ff1ejsn7e52e5f6effe',
+      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+    }
+  };
+
+  const TeamSquad=[];
+  await axios.request(squad).then(function (response) {
+    for(i=0;i<response.data.response.length;i++){
+      let id=response.data.response[i].fixture.id;
+      let timezone=response.data.response[i].fixture.timezone;
+      let date=response.data.response[i].fixture.date;
+      let status=response.data.response[i].fixture.status.short;
+      let teams=response.data.response[i].teams;
+      let goals=response.data.response[i].goals;
+      let logo=response.data.response[i].league.logo;
+      TeamSquad.push({id,timezone,date,status,teams,goals,logo})
+    }
+  }).catch(function (error) {
+      console.error(error);
+  });
+  
+  res.json({data:TeamSquad});
 }
 
 
@@ -249,5 +281,6 @@ module.exports = {
   getLeagueTopScores,
   getLeagueTopAssists,
   getLiveMatches,
-  getTeamFixtures
+  getTeamFixtures,
+  getTeamSquad
 }
