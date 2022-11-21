@@ -3,12 +3,12 @@ import { useEffect, useState } from "react"
 import { ScrollView,View,Text,StyleSheet } from 'react-native'
 import { COLORS } from '../core/COLORS'
 import { Avatar } from "react-native-elements"
-import { Table, TableWrapper, Row} from 'react-native-table-component';
+import { Table, TableWrapper, Row} from 'react-native-table-component'
 import FixtureCard from '../components/FixtureCard'
 import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
 
 function Matches({route}) {
@@ -199,22 +199,6 @@ return(
 )
 }
 
-function Statistics() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
-
-function LastMatches() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
-
 const Tab = createMaterialTopTabNavigator();
 
 export default function Team({route}) {
@@ -224,7 +208,7 @@ return (
   <Tab.Navigator  screenOptions={{
     tabBarActiveTintColor: COLORS.secondaryColor,
     tabBarLabelStyle: { fontSize: 12 },
-    tabBarItemStyle: { width: 140,height:50},
+    tabBarItemStyle: { width: 120,height:50},
     tabBarStyle: { backgroundColor: COLORS.primaryColor },
     tabBarIndicatorStyle:{backgroundColor:COLORS.secondaryColor},
     //tabBarScrollEnabled:'true'
@@ -232,8 +216,6 @@ return (
     <Tab.Screen name="matches" component={Matches} initialParams={{team_id}} />
     <Tab.Screen name="squad" component={Squad} initialParams={{team_id}}/>
     <Tab.Screen name="transfer" component={Transfers} initialParams={{team_id}} />
-    <Tab.Screen name="statistics" component={Statistics} />
-    <Tab.Screen name="Last 5 matches" component={LastMatches} />
   </Tab.Navigator>
   )
 }
