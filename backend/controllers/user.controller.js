@@ -288,13 +288,15 @@ const getTeamTransfers = async (req,res) => {
       let id=response.data.response[i].player.id;
       let name=response.data.response[i].player.name;
       let type=response.data.response[i].transfers[0].type;
+      let player_in_id=response.data.response[i].transfers[0].teams.in.id;
       let player_in_name=response.data.response[i].transfers[0].teams.in.name;
       let player_in_logo=response.data.response[i].transfers[0].teams.in.logo;
+      let player_out_id=response.data.response[i].transfers[0].teams.out.id;
       let player_out_name=response.data.response[i].transfers[0].teams.out.name;
-      let player_out_logo=response.data.response[i].transfers[0].teams.out.name;
+      let player_out_logo=response.data.response[i].transfers[0].teams.out.logo;
       
 
-      TeamTransfers.push({id,name,type,player_in_name,player_in_logo,player_out_name,player_out_logo})
+      TeamTransfers.push({id,name,type,player_in_id,player_in_name,player_in_logo,player_out_id,player_out_name,player_out_logo})
     }
   }).catch(function (error) {
       console.error(error);
