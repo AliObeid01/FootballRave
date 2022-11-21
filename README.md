@@ -17,13 +17,13 @@
 > 
 > Features include:
 • Live match scores.
-> 
-• League details : team,fixtures, tables, and Top Scores.
-> 
+
+• League details : team, fixtures, tables, and Top Scores.
+
 • Team details: matches, linup, transfers and squad.
-> 
-• Match details: overview,lineup,statistics, head to head nad predictions.
-> 
+
+• Match details: overview, lineup, statistics, head to head and predictions.
+
 • Notifications on match start, match end and team scored.
 
 ### User Stories
