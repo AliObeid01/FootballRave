@@ -145,53 +145,59 @@ function Transfers({route}) {
 
 return(
 <ScrollView style={{backgroundColor:COLORS.InputColor}}>
-{transfers.map((transfer) => {
-if(transfer.player_out_id=team_id){
-return (
 <View style={styles.container}>
   <Table>
-      <Row
-      data={CONTENT.In}
-      style={styles.head}
-      textStyle={styles.text}
-      />
-      <TableWrapper style={styles.wrapper}>
+    <Row
+    data={CONTENT.In}
+    style={styles.head}
+    textStyle={styles.text}
+    />
+    <TableWrapper style={styles.wrapper}>
+    <View >
+    {transfers.map((transfer) => {
+     if(transfer.player_out_id!=team_id){
+     return (
       <View style={styles.row}>
-          <Text style={styles.rowText}>{transfer.name}</Text>
-          <Avatar  size="small" rounded source={{uri:transfer.player_in_logo}}/>
-          <Text style={styles.rowText}>{transfer.player_in_name}</Text>
-          <Text style={styles.rowText}>{transfer.type}</Text>
+        <Text style={styles.rowText}>{transfer.name}</Text>
+        <Avatar  size="small" rounded source={{uri:transfer.player_out_logo}}/>
+        <Text style={styles.rowText}>{transfer.player_in_name}</Text>
+        <Text style={styles.rowText}>{transfer.type}</Text>
       </View>
-      </TableWrapper>
+      )
+    } 
+    })}
+    </View>
+    </TableWrapper>
   </Table>
   </View>
-  )
-}
-return (
   <View style={styles.container}>
-    <Table>
-        <Row
-        data={CONTENT.Out}
-        style={styles.head}
-        textStyle={styles.text}
-        />
-        <TableWrapper style={styles.wrapper}>
-        <View style={styles.row}>
-            <Text style={styles.rowText}>{transfer.name}</Text>
-            <Avatar  size="small" rounded source={{uri:transfer.player_out_logo}}/>
-            <Text style={styles.rowText}>{transfer.player_out_name}</Text>
-            <Text style={styles.rowText}>{transfer.type}</Text>
-        </View>
-        </TableWrapper>
-    </Table>
+  <Table>
+    <Row
+    data={CONTENT.Out}
+    style={styles.head}
+    textStyle={styles.text}
+    />
+    <TableWrapper style={styles.wrapper}>
+    <View >
+    {transfers.map((transfer) => {
+     if(transfer.player_out_id==team_id){
+     return (
+      <View style={styles.row}>
+        <Text style={styles.rowText}>{transfer.name}</Text>
+        <Avatar  size="small" rounded source={{uri:transfer.player_in_logo}}/>
+        <Text style={styles.rowText}>{transfer.player_in_name}</Text>
+        <Text style={styles.rowText}>{transfer.type}</Text>
+      </View>
+      )
+    } 
+    })}
     </View>
-    )  
-
-})}
+    </TableWrapper>
+  </Table>
+  </View>
 </ScrollView>
 )
 }
-
 
 function Statistics() {
   return (
@@ -236,7 +242,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor,paddingBottom:4},
   head: { height: 40, backgroundColor: COLORS.primaryColor },
   wrapper: {backgroundColor: COLORS.primaryColor },
-  text: { textAlign: 'center',color:COLORS.secondaryColor },
+  text: { textAlign: 'center',color:COLORS.secondaryColor,fontSize:20 },
   row: {
     backgroundColor: COLORS.primaryColor,
     height: 50,
