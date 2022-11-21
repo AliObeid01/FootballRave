@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { ScrollView,View,Text,StyleSheet } from 'react-native'
 import { COLORS } from '../core/COLORS'
 import { Avatar } from "react-native-elements"
+import { Table, TableWrapper, Row} from 'react-native-table-component';
 import FixtureCard from '../components/FixtureCard'
 import MatchCard from '../components/MatchCard'
 import axios from "axios"
@@ -73,14 +74,6 @@ function Matches({route}) {
 )
 }
 
-function LineUp() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
-
 function Squad({route}) {
   const [squads, setSquad] = useState([]);
   const team_id=route.params.team_id
@@ -121,13 +114,85 @@ function Squad({route}) {
   )
 }
 
-function Transfers() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
+function Transfers({route}) {
+  const [transfers, setTransfers] = useState([]);
+  const team_id=route.params.team_id
+  const data={
+    team_id   
+  }  
+  useEffect(() => {
+    const getTransfers= async ()=>{
+    const token = await AsyncStorage.getItem('@token')
+    axios({
+        method: "POST",
+        data,
+        url: `http://192.168.1.5:5000/user/team_transfers`,
+        headers:{
+        "Authorization" : "Bearer " +token
+
+        }
+    }).then((res) => {
+      setTransfers(res.data.data);
+    });
+    }
+    getTransfers();
+  }, []);
+ 
+  const CONTENT = {
+    In: ['Players In'],
+    Out: ['Players Out'],    
+   };
+
+return(
+<ScrollView style={{backgroundColor:COLORS.InputColor}}>
+{transfers.map((transfer) => {
+if(transfer.player_out_id=team_id){
+return (
+<View style={styles.container}>
+  <Table>
+      <Row
+      data={CONTENT.In}
+      style={styles.head}
+      textStyle={styles.text}
+      />
+      <TableWrapper style={styles.wrapper}>
+      <View style={styles.row}>
+          <Text style={styles.rowText}>{transfer.name}</Text>
+          <Avatar  size="small" rounded source={{uri:transfer.player_in_logo}}/>
+          <Text style={styles.rowText}>{transfer.player_in_name}</Text>
+          <Text style={styles.rowText}>{transfer.type}</Text>
+      </View>
+      </TableWrapper>
+  </Table>
+  </View>
+  )
 }
+return (
+  <View style={styles.container}>
+    <Table>
+        <Row
+        data={CONTENT.Out}
+        style={styles.head}
+        textStyle={styles.text}
+        />
+        <TableWrapper style={styles.wrapper}>
+        <View style={styles.row}>
+            <Text style={styles.rowText}>{transfer.name}</Text>
+            <Avatar  size="small" rounded source={{uri:transfer.player_out_logo}}/>
+            <Text style={styles.rowText}>{transfer.player_out_name}</Text>
+            <Text style={styles.rowText}>{transfer.type}</Text>
+        </View>
+        </TableWrapper>
+    </Table>
+    </View>
+    )  
+
+})}
+</ScrollView>
+)
+}
+
+
 function Statistics() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -160,7 +225,7 @@ return (
   }}>
     <Tab.Screen name="matches" component={Matches} initialParams={{team_id}} />
     <Tab.Screen name="squad" component={Squad} initialParams={{team_id}}/>
-    <Tab.Screen name="transfer" component={Transfers} />
+    <Tab.Screen name="transfer" component={Transfers} initialParams={{team_id}} />
     <Tab.Screen name="statistics" component={Statistics} />
     <Tab.Screen name="Last 5 matches" component={LastMatches} />
   </Tab.Navigator>
@@ -168,6 +233,10 @@ return (
 }
 
 const styles = StyleSheet.create({
+  container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor,paddingBottom:4},
+  head: { height: 40, backgroundColor: COLORS.primaryColor },
+  wrapper: {backgroundColor: COLORS.primaryColor },
+  text: { textAlign: 'center',color:COLORS.secondaryColor },
   row: {
     backgroundColor: COLORS.primaryColor,
     height: 50,
