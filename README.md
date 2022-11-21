@@ -31,15 +31,6 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-| Landing  | Home/Search  |
-| -----------------| -----|
-
-
-| Artists results  | Artist's Albums  |
-| -----------------| -----|
-
-
-
 <br><br>
 
 <img src="./readme/title4.svg"/>
@@ -56,11 +47,6 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <img src="./readme/title5.svg"/>
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
-
-| Landing  | Home/Search  |
-| -----------------| -----|
-
-
 
 <br><br>
 <img src="./readme/title6.svg"/>
