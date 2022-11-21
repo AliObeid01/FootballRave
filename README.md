@@ -16,16 +16,16 @@
 > FootBallRave gives you all the live scores, stats, and storylines to keep you up to speed with the world of soccer.
 > 
 > Features include:
-> 
-• Live match scores.
 
-• League details : team, fixtures, tables, and Top Scores.
+>• Live match scores.
 
-• Team details: matches, linup, transfers and squad.
+>• League details : team, fixtures, tables, and Top Scores.
 
-• Match details: overview, lineup, statistics, head to head and predictions.
+>• Team details: matches, linup, transfers and squad.
 
-• Notifications on match start, match end and team scored.
+>• Match details: overview, lineup, statistics, head to head and predictions.
+
+>• Notifications on match start, match end and team scored.
 
 ### User Stories
 - As a user, I want to browse Matches statistics , so that I can find live matches, upcoming matches and the already played.
