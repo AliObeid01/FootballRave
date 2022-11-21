@@ -40,7 +40,7 @@ export default function TopScores({route}) {
         axios({
             method: "POST",
             data,
-            url: `http://192.168.1.50:5000/user/TopAssists`,
+            url: `http://192.168.1.5:5000/user/TopAssists`,
             headers:{
             "Authorization" : "Bearer " +token
 
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor,paddingBottom:4},
   head: { height: 40, backgroundColor: COLORS.primaryColor },
   wrapper: {backgroundColor: COLORS.primaryColor },
-  text: { textAlign: 'center',color:COLORS.secondaryColor },
+  text: { textAlign: 'center',color:COLORS.secondaryColor,fontSize:20},
   row: {
     //marginHorizontal: 10,
     marginTop: 5,
