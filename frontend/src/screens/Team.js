@@ -39,7 +39,7 @@ function Matches({route}) {
           if(fix.status=='FT'){
           return (
           <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
-          <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()} league={require('../assets/logo.png')}/>    
+          <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()} league={{uri:fix.logo}}/>    
           <MatchCard time={fix.goals.home+'-'+fix.goals.away} screenName='MatchDetails' team1={fix.teams.home.name} team2={fix.teams.away.name} team1Avatar={{uri:fix.teams.home.logo}} team2Avatar={{uri:fix.teams.away.logo}}/>
           </View>
           )
@@ -47,7 +47,7 @@ function Matches({route}) {
         else if(fix.status=='NS'&& new Date(fix.date.substr(0,10))>new Date('2022-11-01')){
           return (
           <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
-          <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()} league={require('../assets/logo.png')}/>    
+          <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()} league={{uri:fix.logo}}/>    
           <MatchCard time={fix.date.substr(11,5)+' '+fix.timezone} screenName='MatchDetails' team1={fix.teams.home.name} team2={fix.teams.away.name} team1Avatar={{uri:fix.teams.home.logo}} team2Avatar={{uri:fix.teams.away.logo}}/>
           </View>
           )
@@ -55,14 +55,14 @@ function Matches({route}) {
         else if(fix.status=='TBD'){
           return (
           <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
-          <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()+' '+'(Time to be Determined)'} league={require('../assets/logo.png')}/>    
+          <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()+' '+'(Time to be Determined)'} league={{uri:fix.logo}}/>    
           <MatchCard time={fix.date.substr(11,5)+' '+fix.timezone} screenName='MatchDetails' team1={fix.teams.home.name} team2={fix.teams.away.name} team1Avatar={{uri:fix.teams.home.logo}} team2Avatar={{uri:fix.teams.away.logo}}/>
           </View>
           )
         }
         return (
           <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
-          <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()+' '+'(Postpone)'} league={require('../assets/logo.png')}/>    
+          <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()+' '+'(Postpone)'} league={{uri:fix.logo}}/>    
           <MatchCard time={fix.date.substr(11,5)+' '+fix.timezone} screenName='MatchDetails' team1={fix.teams.home.name} team2={fix.teams.away.name} team1Avatar={{uri:fix.teams.home.logo}} team2Avatar={{uri:fix.teams.away.logo}}/>
           </View>
           )
