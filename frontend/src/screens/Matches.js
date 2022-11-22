@@ -1,18 +1,18 @@
 import * as React from 'react'
 import { useEffect, useState } from "react"
-import {ActivityIndicator, ScrollView, View,Text} from 'react-native'
+import {ScrollView, View,Text} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS } from '../core/COLORS'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import Entypo from '@expo/vector-icons/Entypo'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
-import NewsCard from '../components/NewsCard'
 import LeagueCard from '../components/LeagueCard'
 import FixtureCard from '../components/FixtureCard'
 import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 function MatchScreen() {
 
@@ -89,10 +89,13 @@ function MatchScreen() {
 }
 
 function ChatScreen() {
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={{backgroundColor:COLORS.InputColor,height:'100%'}}>
-    <Text style={{color:COLORS.secondaryColor,fontSize:15,textAlign:'center',marginTop:250}}>Still working on this Feature it will implemented soon.Thank you for your Time</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name='ChatLogin' component={Login} options={{ headerShown: false }}/>
+      <Stack.Screen name='Chat' component={Chat}options={{title: "Chats", headerShown: false}}/>
+      <Stack.Screen name='Messaging' component={Messaging} />
+   </Stack.Navigator>
   );
 }
 
@@ -106,8 +109,6 @@ export default function Matches() {
           return <MaterialCommunityIcons style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='soccer-field' size={25} />
         }else if(route.name === 'Leagues'){
           return <Entypo style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='trophy' size={25} />
-        }else if(route.name === 'Following'){
-          return <Entypo style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='star' size={25} />
         }else if(route.name === 'ChatRoom'){
           return <Ionicons style={{color: focused ? COLORS.secondaryColor : COLORS.placeholder}} name='chatbubbles' size={25} />
         }
