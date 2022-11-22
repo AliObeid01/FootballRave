@@ -122,26 +122,25 @@ export const styles = StyleSheet.create({
 	},
 	modalContainer: {
 		width: "100%",
-		borderTopColor: "#ddd",
-		borderTopWidth: 1,
 		elevation: 1,
-		height: 400,
-		backgroundColor: "#fff",
+		height: 250,
+		backgroundColor: COLORS.primaryColor,
 		position: "absolute",
 		bottom: 0,
 		zIndex: 10,
-		paddingVertical: 50,
+		paddingVertical: 40,
 		paddingHorizontal: 20,
 	},
 	modalinput: {
-		borderWidth: 2,
-		padding: 15,
+		padding: 10,
+        backgroundColor: COLORS.InputColor,
 	},
 	modalsubheading: {
 		fontSize: 20,
 		fontWeight: "bold",
 		marginBottom: 15,
 		textAlign: "center",
+        color:COLORS.secondaryColor
 	},
 	mmessageWrapper: {
 		width: "100%",
