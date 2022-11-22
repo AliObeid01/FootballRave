@@ -161,23 +161,24 @@ export const styles = StyleSheet.create({
 		width: "100%",
 		flexDirection: "row",
 		alignItems: "center",
-		borderRadius: 5,
+		borderRadius: 15,
 		paddingHorizontal: 15,
-		backgroundColor: "#fff",
-		height: 80,
+		backgroundColor: COLORS.primaryColor,
+		height: 70,
 		marginBottom: 10,
-	},
-	cavatar: {
-		marginRight: 15,
 	},
 	cusername: {
 		fontSize: 18,
-		marginBottom: 5,
+		marginBottom: 7,
+        paddingStart:10,
 		fontWeight: "bold",
+        color:COLORS.secondaryColor
 	},
 	cmessage: {
 		fontSize: 14,
 		opacity: 0.7,
+        paddingStart:10,
+        color:COLORS.secondaryColor
 	},
 	crightContainer: {
 		flexDirection: "row",
@@ -186,5 +187,6 @@ export const styles = StyleSheet.create({
 	},
 	ctime: {
 		opacity: 0.5,
+        color:COLORS.secondaryColor
 	},
 });

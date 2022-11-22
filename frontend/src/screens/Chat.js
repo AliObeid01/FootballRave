@@ -35,7 +35,7 @@ const Chat = () => {
 				<View style={styles.chatheader}>
 					<Text style={styles.chatheading}>Chats</Text>
 					<Pressable onPress={handleCreateGroup}>
-						<Feather name='edit' size={24} color='green' />
+						<Feather name='edit' size={24} color='#FF914D' />
 					</Pressable>
 				</View>
 			</View>
