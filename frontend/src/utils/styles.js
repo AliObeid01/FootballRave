@@ -81,27 +81,26 @@ export const styles = StyleSheet.create({
 	},
 	messaginginputContainer: {
 		width: "100%",
-		minHeight: 100,
-		backgroundColor: "white",
-		paddingVertical: 30,
-		paddingHorizontal: 15,
+		height: 75,
+		paddingVertical: 20,
+		paddingHorizontal: 20,
 		justifyContent: "center",
 		flexDirection: "row",
+        backgroundColor: COLORS.primaryColor,
 	},
 	messaginginput: {
 		borderWidth: 1,
-		padding: 15,
-		flex: 1,
+        width:250,
+        height:35,
 		marginRight: 10,
-		borderRadius: 20,
+        color:'white'
 	},
 	messagingbuttonContainer: {
-		width: "30%",
-		backgroundColor: "green",
-		borderRadius: 3,
+		backgroundColor: COLORS.secondaryColor,
 		alignItems: "center",
 		justifyContent: "center",
-		borderRadius: 50,
+		borderRadius: 15,
+        width:75
 	},
 	modalbutton: {
 		width: "40%",

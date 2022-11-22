@@ -87,7 +87,7 @@ const Messaging = ({ route, navigation }) => {
 					onPress={handleNewMessage}
 				>
 					<View>
-						<Text style={{ color: "#f2f0f1", fontSize: 20 }}>SEND</Text>
+						<Text style={{ color: "#f2f0f1", fontSize: 20,padding:2,marginBottom:5}}>SEND</Text>
 					</View>
 				</Pressable>
 			</View>
