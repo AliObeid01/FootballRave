@@ -16,24 +16,20 @@ export default function MessageComponent({ item, user }) {
 				}
 			>
 				<View style={{ flexDirection: "row", alignItems: "center" }}>
-					<Ionicons
-						name='person-circle-outline'
-						size={30}
-						color='black'
-						style={styles.mavatar}
-					/>
-					<Text>{item.user}</Text>
+
+					<Text style={{ marginRight: 4 }}>{item.user}</Text>
 					<View
 						style={
 							status
 								? styles.mmessage
-								: [styles.mmessage, { backgroundColor: "rgb(194, 243, 194)" }]
+								: [styles.mmessage, { backgroundColor: "#505269"}]
 						}
 					>
 						<Text>{item.text}</Text>
+                        
 					</View>
-				</View>
-				<Text style={{ marginLeft: 40 }}>{item.time}</Text>
+                    <Text  style={{ paddingRight: 0 }}>{item.time}</Text>
+				</View>	
 			</View>
 		</View>
 	);
