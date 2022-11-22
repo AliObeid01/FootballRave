@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from "react";
 import {Text,SafeAreaView,View,TextInput,Pressable,Alert,} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { styles } from "../utils/styles";
 
 const ChatLogin = ({ navigation }) => {
 	const [username, setUsername] = useState("");
