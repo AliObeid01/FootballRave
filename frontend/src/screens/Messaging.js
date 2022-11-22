@@ -24,6 +24,27 @@ const Messaging = ({ route, navigation }) => {
 		}
 	};
 
+    const handleNewMessage = () => {
+		const hour =
+			new Date().getHours() < 10
+				? `0${new Date().getHours()}`
+				: `${new Date().getHours()}`;
+
+		const mins =
+			new Date().getMinutes() < 10
+				? `0${new Date().getMinutes()}`
+				: `${new Date().getMinutes()}`;
+
+		if (user) {
+			socket.emit("newMessage", {
+				message,
+				room_id: id,
+				user,
+				timestamp: { hour, mins },
+			});
+		}
+	};
+
 	return (
 		<View style={styles.messagingscreen}>
 			<View
