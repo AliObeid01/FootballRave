@@ -7,7 +7,11 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Messaging = ({ route, navigation }) => {
 	const [user, setUser] = useState("");
+   
+    const { name, id } = route.params;
 
+	const [chatMessages, setChatMessages] = useState([]);
+	const [message, setMessage] = useState("");
 
 	return (
 		<View style={styles.messagingscreen}>
