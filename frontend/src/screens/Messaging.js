@@ -13,6 +13,17 @@ const Messaging = ({ route, navigation }) => {
 	const [chatMessages, setChatMessages] = useState([]);
 	const [message, setMessage] = useState("");
 
+    const getUsername = async () => {
+		try {
+			const value = await AsyncStorage.getItem("username");
+			if (value !== null) {
+				setUser(value);
+			}
+		} catch (e) {
+			console.error("Error while loading username!");
+		}
+	};
+
 	return (
 		<View style={styles.messagingscreen}>
 			<View
