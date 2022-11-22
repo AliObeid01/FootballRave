@@ -13,6 +13,9 @@ import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ChatLogin from "./screens/ChatLogin";
+import Messaging from "./screens/Messaging";
+import Chat from "./screens/Chat";
 
 function MatchScreen() {
 
@@ -92,7 +95,7 @@ function ChatScreen() {
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator>
-      <Stack.Screen name='ChatLogin' component={Login} options={{ headerShown: false }}/>
+      <Stack.Screen name='ChatLogin' component={ChatLogin} options={{ headerShown: false }}/>
       <Stack.Screen name='Chat' component={Chat}options={{title: "Chats", headerShown: false}}/>
       <Stack.Screen name='Messaging' component={Messaging} />
    </Stack.Navigator>
