@@ -40,11 +40,11 @@ const ChatLogin = ({ navigation }) => {
 	return (
 		<SafeAreaView style={styles.loginscreen}>
 			<View style={styles.loginscreen}>
-				<Text style={styles.loginheading}>Sign in</Text>
+				<Text style={styles.loginheading}>Start Chating with your favorite Team Room or create your own Room</Text>
 				<View style={styles.logininputContainer}>
 					<TextInput
 						autoCorrect={false}
-						placeholder='Enter your username'
+						placeholder='Enter your Nick Name'
 						style={styles.logininput}
 						onChangeText={(value) => setUsername(value)}
 					/>
@@ -52,7 +52,7 @@ const ChatLogin = ({ navigation }) => {
 
 				<Pressable onPress={handleSignIn} style={styles.loginbutton}>
 					<View>
-						<Text style={styles.loginbuttonText}>Get Started</Text>
+						<Text style={styles.loginbuttonText}>Start!</Text>
 					</View>
 				</Pressable>
 			</View>

@@ -1,17 +1,20 @@
 import { StyleSheet } from "react-native";
+import { COLORS } from '../core/COLORS'
 
 export const styles = StyleSheet.create({
 	loginscreen: {
 		flex: 1,
-		backgroundColor: "#EEF1FF",
+		backgroundColor: COLORS.InputColor,
 		alignItems: "center",
 		justifyContent: "center",
 		padding: 12,
 		width: "100%",
 	},
 	loginheading: {
-		fontSize: 26,
+		fontSize: 23,
 		marginBottom: 10,
+        color:COLORS.secondaryColor,
+        textAlign:'center'
 	},
 	logininputContainer: {
 		width: "100%",
@@ -22,20 +25,20 @@ export const styles = StyleSheet.create({
 		borderWidth: 1,
 		width: "90%",
 		padding: 8,
-		//borderRadius: 2,
+		borderRadius: 4,
 	},
 	loginbutton: {
-		backgroundColor: "green",
+		backgroundColor: COLORS.secondaryColor,
 		padding: 12,
 		marginVertical: 10,
 		width: "60%",
-		//borderRadius: "50%",
-		elevation: 1,
+		borderRadius: 15,
+		elevation: 5,
 	},
 	loginbuttonText: {
 		textAlign: "center",
-		color: "#fff",
-		fontWeight: "600",
+		color: COLORS.fontPrimary,
+		fontWeight: 'bold',
 	},
 	chatscreen: {
 		backgroundColor: "#F7F7F7",

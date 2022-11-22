@@ -2,7 +2,6 @@ import React from 'react'
 import { Provider } from 'react-native-paper'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import HeaderIcons from './src/components/HeaderIcons'
 import { COLORS } from './src/core/COLORS'
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
