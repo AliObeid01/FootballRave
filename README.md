@@ -19,13 +19,15 @@
 
 >• Live match scores.
 
->• League details : team, fixtures, tables, and Top Scores.
+>• League details : Teams, Fixtures, Table, and Top Scores.
 
->• Team details: matches, linup, transfers and squad.
+>• Team details: Matches, Transfers and Squad.
 
->• Match details: overview, lineup, statistics, head to head and predictions.
+>• Match details: Overview, Lineup, Head to Head and Predictions.
 
->• Notifications on match start, match end and team scored.
+>• Notifications on Match start, Match end and Team scored.
+
+>• Chat Room.
 
 ### User Stories
 - As a user, I want to browse Matches statistics , so that I can find live matches, upcoming matches and the already played.
@@ -33,6 +35,8 @@
 - As a user, I want to browse Teams, so that I can find my favorite team and check its statistics.
 - As a user, I want to browse Matches, so that I can find my favorite team and check its statistics.
 - As a user, I want to receive notifications when a match start, match end and team scored.
+- As a user, I want to receive notifications when a match start, match end and team scored.
+- As a user, I want to create and join chat rooms.
 
 <br><br>
 
