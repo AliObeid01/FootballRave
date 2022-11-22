@@ -45,6 +45,17 @@ const Messaging = ({ route, navigation }) => {
 		}
 	};
 
+    useLayoutEffect(() => {
+		navigation.setOptions({ title: name });
+		getUsername();
+		socket.emit("findRoom", id);
+		socket.on("foundRoom", (roomChats) => setChatMessages(roomChats));
+	}, []);
+
+	useEffect(() => {
+		socket.on("foundRoom", (roomChats) => setChatMessages(roomChats));
+	}, [socket]);
+
 	return (
 		<View style={styles.messagingscreen}>
 			<View
