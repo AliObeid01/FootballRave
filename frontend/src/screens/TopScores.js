@@ -73,7 +73,7 @@ export default function TopScores({route}) {
             <Avatar  size="small" rounded source={{uri:score.photo}}/>
             <Text style={styles.rowText}>{score.name}</Text>
             <Avatar  size="small" rounded source={{uri:score.logo}}/>
-            <Text style={styles.rowText}>{score.goals} <Ionicons name='football-outline' size={13} /></Text>
+            <Text style={styles.scoreText}>{score.goals} <Ionicons name='football-outline' size={13} /></Text>
          </View>
         )
        })} 
@@ -95,7 +95,7 @@ export default function TopScores({route}) {
             <Avatar  size="small" rounded source={{uri:assist.photo}}/>
             <Text style={styles.rowText}>{assist.name}</Text>
             <Avatar  size="small" rounded source={{uri:assist.logo}}/>
-            <Text style={styles.rowText}>{assist.assists} <Icon name='shoe-cleat' size={13} /></Text>
+            <Text style={styles.scoreText}>{assist.assists} <Icon name='shoe-cleat' size={13} /></Text>
          </View>
         )
        })} 
@@ -108,22 +108,27 @@ export default function TopScores({route}) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor,paddingBottom:4},
-  head: { height: 40, backgroundColor: COLORS.primaryColor },
+  head: { height: 40, backgroundColor: COLORS.InputColor,paddingBottom:10 },
   wrapper: {backgroundColor: COLORS.primaryColor },
-  text: { textAlign: 'center',color:COLORS.secondaryColor,fontSize:20},
+  text: { textAlign: 'center',color:'white',fontSize:20},
   row: {
-    //marginHorizontal: 10,
-    marginTop: 5,
+    marginTop: 10,
     height: 50,
     flexDirection: "row",
-    justifyContent: 'space-between',
-    //paddingHorizontal: 1,
-    paddingStart:40
+    justifyContent: 'flex-start',
+    paddingHorizontal: 10,
   },
   rowText: {
     flex: 1, 
     fontSize: 14,
     color: COLORS.secondaryColor,
-    textAlign: 'center',
+    paddingLeft:10,
+    paddingTop:5
   },
+  scoreText:{
+    paddingLeft:10,
+    color: COLORS.secondaryColor,
+    paddingLeft:10,
+    paddingTop:5
+  }
 });

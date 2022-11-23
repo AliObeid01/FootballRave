@@ -39,7 +39,7 @@ export default function RegisterScreen({ navigation }) {
       await axios({       
         method: "POST",
         data,
-        url: "http://192.168.1.2:5000/auth/signup",
+        url: "http://192.168.43.250:5000/auth/signup",
         headers:{
           'Content-Type': 'application/x-www-form-urlencoded',
           }
