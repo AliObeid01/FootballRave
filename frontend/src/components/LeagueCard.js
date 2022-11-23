@@ -18,7 +18,7 @@ const LeagueCard = (props) => {
 const styles = StyleSheet.create({
   card_template:{
     flexDirection: 'column',
-    width: '43%',
+    width: '30%',
     margin: 5,
     borderRadius:10,
     borderWidth:0.5,
@@ -27,16 +27,20 @@ const styles = StyleSheet.create({
   },
   card_image: {
     width: '100%',
-    height: 150,
-    borderRadius:10,
-    resizeMode: "contain",
+    height: 100,
+    borderTopLeftRadius:10,
+    borderTopRightRadius:10,
+    resizeMode: "center",
   },
   card_title: {
     color: COLORS.secondaryColor,
+    textAlignVertical: 'center',
     textAlign: 'center',
     fontSize:13,
     fontWeight:"bold",
-    borderRadius:10,
+    borderBottomLeftRadius:10,
+    borderBottomRightRadius:10,
+    height:30,
     backgroundColor:COLORS.primaryColor
   }
 })
