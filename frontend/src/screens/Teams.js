@@ -33,7 +33,7 @@ export default function Teams({route}) {
 
 return (
     <ScrollView style={{backgroundColor:COLORS.InputColor,height:'100%'}}>
-    <View style={{flexDirection: 'row',justifyContent: 'center',alignItems: 'center',flexWrap: 'wrap'}}>
+    <View style={{flexDirection: 'row',justifyContent: 'center',alignItems: 'center',flexWrap: 'wrap',paddingTop:5}}>
         {teams.map((team) => {
                return <TeamCard name={team.name} path={{uri:team.logo}} screenName='Team' team_id={team.id}/>
             })}       
