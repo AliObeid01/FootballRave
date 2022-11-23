@@ -38,7 +38,7 @@ return (
       {fixtures.map((fix) => {
         if(fix.status=='FT'){
         return (
-        <View style={{marginTop: 10,marginLeft:10,marginRight:10,marginBottom:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
+        <View style={{marginTop: 10,marginLeft:10,marginRight:10,borderRadius: 10,backgroundColor: COLORS.primaryColor,}}>
         <FixtureCard name={new Date(fix.date.substr(0,10)).toDateString()} league={require('../assets/logo.png')}/>    
         <MatchCard time={fix.goals.home+'-'+fix.goals.away} screenName='MatchDetails' team1={fix.teams.home.name} team2={fix.teams.away.name} team1Avatar={{uri:fix.teams.home.logo}} team2Avatar={{uri:fix.teams.away.logo}}/>
         </View>
