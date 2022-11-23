@@ -82,7 +82,7 @@ export default function App() {
             name="MatchDetails" component={MatchDetails}/>
           <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="LeagueFixtures" component={LeagueFixtures}/>
-          <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+          <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: "white"})}
             name="TableScreen" component={TableScreen}/>
           <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="TopScores" component={TopScores}/>  

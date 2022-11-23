@@ -43,12 +43,12 @@ export default function BasicTable({route}) {
     
     return (
     <View style={styles.container}>
-    <Table borderStyle={{ borderWidth: 1 }}>
+    <Table borderStyle={{ borderWidth: 1,borderColor:COLORS.InputColor }}>
         <Row
         data={CONTENT.tableHead}
         flexArr={[1,4]}
         style={styles.head}
-        textStyle={styles.text}
+        textStyle={styles.headertext}
         />
         <TableWrapper style={styles.wrapper}>
         <Rows
@@ -66,8 +66,9 @@ export default function BasicTable({route}) {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor},
   head: { height: 40, backgroundColor: COLORS.primaryColor },
+  headertext:{textAlign: 'center',color: COLORS.secondaryColor},
   wrapper: { flexDirection: 'row',backgroundColor: COLORS.primaryColor },
-  title: { flex: 1, backgroundColor: '#2ecc71' },
+  //title: { flex: 1, backgroundColor: '#2ecc71' },
   row: { height: 28 },
-  text: { textAlign: 'center',color:COLORS.secondaryColor },
+  text: { textAlign: 'center',color:'white' },
 });
