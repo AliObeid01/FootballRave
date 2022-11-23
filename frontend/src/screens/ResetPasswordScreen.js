@@ -21,7 +21,6 @@ export default function ResetPasswordScreen({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Title>Restore Password</Title>
       <TextInput
         label="E-mail address"
         returnKeyType="done"
@@ -35,7 +34,7 @@ export default function ResetPasswordScreen({ navigation }) {
         keyboardType="email-address"
         description="You will receive email with password reset link."
       />
-      <Button onPress={sendResetPasswordEmail}>Send Instructions</Button>
+      <Button onPress={sendResetPasswordEmail}>Reset Password</Button>
     </Background>
   )
 }

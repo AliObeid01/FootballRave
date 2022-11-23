@@ -106,4 +106,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color:  COLORS.secondaryColor,
   },
+  text:{
+    color: COLORS.fontPrimary,
+  }
 })
