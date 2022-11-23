@@ -72,7 +72,7 @@ export default function App() {
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen}/>
           <Stack.Screen name="Matches" component={Matches}/>
-          <Stack.Screen options={({route}) =>({headerShown: true,id:route.params.id, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+          <Stack.Screen options={({route}) =>({headerShown: true,id:route.params.id, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: "white"})}
             name="League" component={League}/>
           <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="Teams" component={Teams}/>

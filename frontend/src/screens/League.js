@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
 
 container: {
   height: "100%",
+  paddingTop:5,
   backgroundColor: COLORS.InputColor,
   flexDirection: 'row',
   justifyContent: 'center',

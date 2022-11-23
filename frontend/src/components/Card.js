@@ -93,6 +93,7 @@ card:{
 },
 text:{
     textAlign: 'center',
+    fontWeight:'bold',
     color:COLORS.secondaryColor,
     padding:20,
 },
