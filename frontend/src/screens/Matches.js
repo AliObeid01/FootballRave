@@ -26,7 +26,7 @@ function MatchScreen() {
       const token = await AsyncStorage.getItem('@token')
       axios({
         method: "GET",
-        url: `http://192.168.1.5:5000/user/live`,
+        url: `http://192.168.1.2:5000/user/live`,
         headers:{
           "Authorization" : "Bearer " +token
   
@@ -68,7 +68,7 @@ function MatchScreen() {
       const token = await AsyncStorage.getItem('@token')
       axios({
         method: "GET",
-        url: `http://192.168.1.5:5000/user/leagues`,
+        url: `http://192.168.1.2:5000/user/leagues`,
         headers:{
           "Authorization" : "Bearer " +token
   

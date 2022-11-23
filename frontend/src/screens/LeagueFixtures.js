@@ -21,7 +21,7 @@ useEffect(() => {
     axios({
         method: "POST",
         data,
-        url: `http://192.168.1.5:5000/user/league_fixtures`,
+        url: `http://192.168.1.2:5000/user/league_fixtures`,
         headers:{
         "Authorization" : "Bearer " +token
 
