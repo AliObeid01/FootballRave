@@ -19,7 +19,7 @@ export default function Teams({route}) {
       axios({
         method: "POST",
         data,
-        url: `http://192.168.1.2:5000/user/teams`,
+        url: `http://192.168.43.250:5000/user/teams`,
         headers:{
           "Authorization" : "Bearer " +token
   

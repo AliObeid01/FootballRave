@@ -23,7 +23,7 @@ function Matches({route}) {
     axios({
         method: "POST",
         data,
-        url: `http://192.168.1.2:5000/user/team_fixtures`,
+        url: `http://192.168.43.250:5000/user/team_fixtures`,
         headers:{
         "Authorization" : "Bearer " +token
 
@@ -86,7 +86,7 @@ function Squad({route}) {
     axios({
         method: "POST",
         data,
-        url: `http://192.168.1.2:5000/user/team_squad`,
+        url: `http://192.168.43.250:5000/user/team_squad`,
         headers:{
         "Authorization" : "Bearer " +token
 
@@ -126,7 +126,7 @@ function Transfers({route}) {
     axios({
         method: "POST",
         data,
-        url: `http://192.168.1.2:5000/user/team_transfers`,
+        url: `http://192.168.43.250:5000/user/team_transfers`,
         headers:{
         "Authorization" : "Bearer " +token
 
