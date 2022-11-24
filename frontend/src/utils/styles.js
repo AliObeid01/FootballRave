@@ -130,6 +130,7 @@ export const styles = StyleSheet.create({
 		zIndex: 10,
 		paddingVertical: 40,
 		paddingHorizontal: 20,
+		
 	},
 	modalinput: {
 		padding: 10,
