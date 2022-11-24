@@ -5,6 +5,7 @@ import Modal from "../components/Modal";
 import ChatComponent from "../components/ChatComponent";
 import socket from "../utils/socket";
 import { styles } from "../utils/styles";
+import { FAB } from 'react-native-elements';
 
 const Chat = () => {
 	const [visible, setVisible] = useState(false);
@@ -31,14 +32,14 @@ const Chat = () => {
 
 	return (
 		<SafeAreaView style={styles.chatscreen}>
-			<View style={styles.chattopContainer}>
+			
 				<View style={styles.chatheader}>
-					<Text style={styles.chatheading}>Chats</Text>
+					
 					<Pressable onPress={handleCreateGroup}>
 						<Feather name='edit' size={24} color='#FF914D' />
 					</Pressable>
 				</View>
-			</View>
+			
 
 			<View style={styles.chatlistContainer}>
 				{rooms.length > 0 ? (
@@ -47,6 +48,7 @@ const Chat = () => {
 						renderItem={({ item }) => <ChatComponent item={item} />}
 						keyExtractor={(item) => item.id}
 					/>
+					
 				) : (
 					<View style={styles.chatemptyContainer}>
 						<Text style={styles.chatemptyText}>No rooms created!</Text>

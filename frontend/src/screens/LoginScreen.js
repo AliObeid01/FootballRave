@@ -42,6 +42,7 @@ export default function LoginScreen({ navigation }) {
           }
       }).then(async (res) => {
           await AsyncStorage.setItem('@token',res.data.token)
+          await AsyncStorage.setItem('@user',res.data.user)
           navigation.reset({
             index: 0,
             routes: [{ name: 'Matches' }],

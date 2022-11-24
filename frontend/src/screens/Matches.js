@@ -95,9 +95,8 @@ function ChatScreen() {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
-      <Stack.Screen name='ChatLogin' component={ChatLogin} options={{ headerShown: false }}/>
-      <Stack.Screen name='Chat' component={Chat} options={{headerShown: false}}/>
-      <Stack.Screen name='Messaging' component={Messaging} options={{headerShown: false}} />
+      <Stack.Screen name='Chat Room' component={Chat} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})} />
+      <Stack.Screen name='Messaging' component={Messaging}/>
    </Stack.Navigator>
   );
 }
@@ -127,7 +126,7 @@ export default function Matches() {
   })}>
       <Tab.Screen name="Live Matches" component={MatchScreen}/>
       <Tab.Screen name="Leagues" component={LeaguesScreen}/>
-      <Tab.Screen name="ChatRoom" component={ChatScreen} />
+      <Tab.Screen name="ChatRoom" component={ChatScreen} options={{ headerShown: false }}/>
     </Tab.Navigator>
   )
 }

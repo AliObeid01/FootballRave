@@ -61,12 +61,13 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.primaryColor,
 	},
 	chatheader: {
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between",
+		position: 'absolute',
+		right: 15,
+		top: 550,
 	},
 	chatlistContainer: {
 		paddingHorizontal: 10,
+		padding:10
 	},
 	chatemptyContainer: {
 		width: "100%",
@@ -167,11 +168,11 @@ export const styles = StyleSheet.create({
 		marginBottom: 7,
         paddingStart:10,
 		fontWeight: "bold",
-        color:COLORS.secondaryColor
+        color:'white'
 	},
 	cmessage: {
 		fontSize: 14,
-		opacity: 0.7,
+		opacity: 0.5,
         paddingStart:10,
         color:COLORS.secondaryColor
 	},
