@@ -4,6 +4,9 @@ import socket from "../utils/socket";
 import MessageComponent from "../components/MessageComponent";
 import { styles } from "../utils/styles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons'
+import { COLORS } from "../core/COLORS";
+
 
 const Messaging = ({ route, navigation }) => {
 	const [user, setUser] = useState("");
@@ -82,13 +85,8 @@ const Messaging = ({ route, navigation }) => {
 					style={styles.messaginginput}
 					onChangeText={(value) => setMessage(value)}
 				/>
-				<Pressable
-					style={styles.messagingbuttonContainer}
-					onPress={handleNewMessage}
-				>
-					<View>
-						<Text style={{ color: "#f2f0f1", fontSize: 20,padding:2,marginBottom:5}}>SEND</Text>
-					</View>
+				<Pressable onPress={handleNewMessage}>
+					<MaterialIcons name='send' size={25} style={{ color:COLORS.secondaryColor,padding:2,marginBottom:5}}/>	
 				</Pressable>
 			</View>
 		</View>

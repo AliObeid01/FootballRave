@@ -90,11 +90,11 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.primaryColor,
 	},
 	messaginginput: {
-		borderWidth: 1,
-        width:250,
+        width:300,
         height:35,
 		marginRight: 10,
-        color:'white'
+        color:'white',
+		backgroundColor: COLORS.InputColor,
 	},
 	messagingbuttonContainer: {
 		backgroundColor: COLORS.secondaryColor,

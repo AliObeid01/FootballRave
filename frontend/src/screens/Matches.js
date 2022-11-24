@@ -96,7 +96,7 @@ function ChatScreen() {
   return (
     <Stack.Navigator>
       <Stack.Screen name='Chat Room' component={Chat} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})} />
-      <Stack.Screen name='Messaging' component={Messaging}/>
+      <Stack.Screen name='Messaging' component={Messaging} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: 'white'})}/>
    </Stack.Navigator>
   );
 }

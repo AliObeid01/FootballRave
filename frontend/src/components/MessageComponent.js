@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { Ionicons } from "@expo/vector-icons";
 import { styles } from "../utils/styles";
+import { COLORS } from "../core/COLORS";
 
 export default function MessageComponent({ item, user }) {
 	const status = item.user !== user;
@@ -17,18 +17,18 @@ export default function MessageComponent({ item, user }) {
 			>
 				<View style={{ flexDirection: "row", alignItems: "center" }}>
 
-					<Text style={{ marginRight: 4 }}>{item.user}</Text>
+					<Text style={{ marginRight: 4,color: COLORS.placeholder }}>{item.user}</Text>
 					<View
 						style={
 							status
 								? styles.mmessage
-								: [styles.mmessage, { backgroundColor: "#505269"}]
+								: [styles.mmessage, { backgroundColor: COLORS.primaryColor}]
 						}
 					>
-						<Text>{item.text}</Text>
+						<Text style={{ color: 'white' }}>{item.text}</Text>
                         
 					</View>
-                    <Text  style={{ paddingRight: 0 }}>{item.time}</Text>
+                    <Text  style={{color: COLORS.placeholder, paddingRight: 0 }}>{item.time}</Text>
 				</View>	
 			</View>
 		</View>
