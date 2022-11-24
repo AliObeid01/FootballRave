@@ -1,11 +1,11 @@
 import React, { useState, useLayoutEffect, useEffect } from "react";
-import { View, Text, Pressable, SafeAreaView, FlatList } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { View, Text, TouchableOpacity, SafeAreaView, FlatList } from "react-native";
 import Modal from "../components/Modal";
 import ChatComponent from "../components/ChatComponent";
 import socket from "../utils/socket";
 import { styles } from "../utils/styles";
-import { FAB } from 'react-native-elements';
+import AntDesign from '@expo/vector-icons/AntDesign'
+import { COLORS } from '../core/COLORS'
 
 const Chat = () => {
 	const [visible, setVisible] = useState(false);
@@ -31,16 +31,12 @@ const Chat = () => {
 	const handleCreateGroup = () => setVisible(true);
 
 	return (
-		<SafeAreaView style={styles.chatscreen}>
-			
+		<SafeAreaView style={styles.chatscreen}>			
 				<View style={styles.chatheader}>
-					
-					<Pressable onPress={handleCreateGroup}>
-						<Feather name='edit' size={24} color='#FF914D' />
-					</Pressable>
+				<TouchableOpacity onPress={handleCreateGroup}>
+                  <AntDesign style={{color:COLORS.secondaryColor}}  name='pluscircleo' size={30} />
+                </TouchableOpacity>
 				</View>
-			
-
 			<View style={styles.chatlistContainer}>
 				{rooms.length > 0 ? (
 					<FlatList
@@ -52,7 +48,7 @@ const Chat = () => {
 				) : (
 					<View style={styles.chatemptyContainer}>
 						<Text style={styles.chatemptyText}>No rooms created!</Text>
-						<Text>Click the icon above to create a Chat room</Text>
+						<Text>Click the + to create a new room</Text>
 					</View>
 				)}
 			</View>
