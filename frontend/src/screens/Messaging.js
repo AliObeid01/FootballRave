@@ -18,7 +18,7 @@ const Messaging = ({ route, navigation }) => {
 
     const getUsername = async () => {
 		try {
-			const value = await AsyncStorage.getItem("username");
+			const value = await AsyncStorage.getItem("@user");
 			if (value !== null) {
 				setUser(value);
 			}
