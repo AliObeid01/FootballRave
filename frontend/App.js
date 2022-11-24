@@ -76,7 +76,7 @@ export default function App() {
             name="League" component={League}/>
           <Stack.Screen options={({route}) =>({headerShown: true,league_id:route.params.league_id, title: route.params.title ,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: "white"})}
             name="Teams" component={Teams}/>
-          <Stack.Screen options={({route}) =>({headerShown: true,team_id: route.params.team_id,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
+          <Stack.Screen options={({route}) =>({headerShown: true,team_id: route.params.team_id,title: route.params.title,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: "white"})}
             name="Team" component={Team}/>
           <Stack.Screen options={({route}) =>({headerShown: true,headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})}
             name="MatchDetails" component={MatchDetails}/>

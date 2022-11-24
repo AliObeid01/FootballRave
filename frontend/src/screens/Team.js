@@ -99,7 +99,7 @@ function Squad({route}) {
   }, []);
 
   return(
-  <ScrollView style={{backgroundColor:COLORS.InputColor}}>
+  <ScrollView style={{backgroundColor:COLORS.InputColor,paddingTop:5}}>
     {squads.map((squad) => {
     return (
       <View style={styles.row}>
@@ -158,10 +158,9 @@ return(
      if(transfer.player_out_id!=team_id){
      return (
       <View style={styles.row}>
-        <Text style={styles.rowText}>{transfer.name}</Text>
         <Avatar  size="small" rounded source={{uri:transfer.player_out_logo}}/>
-        <Text style={styles.rowText}>{transfer.player_in_name}</Text>
-        <Text style={styles.rowText}>{transfer.type}</Text>
+        <Text style={styles.rowText}>{transfer.name}</Text>
+        <Text style={styles.typeText}>{transfer.type}</Text>
       </View>
       )
     } 
@@ -182,12 +181,11 @@ return(
     {transfers.map((transfer) => {
      if(transfer.player_out_id==team_id){
      return (
-      <View style={styles.row}>
-        <Text style={styles.rowText}>{transfer.name}</Text>
-        <Avatar  size="small" rounded source={{uri:transfer.player_in_logo}}/>
-        <Text style={styles.rowText}>{transfer.player_in_name}</Text>
-        <Text style={styles.rowText}>{transfer.type}</Text>
-      </View>
+        <View style={styles.row}>
+          <Avatar  size="small" rounded source={{uri:transfer.player_in_logo}}/>
+          <Text style={styles.rowText}>{transfer.name}</Text>
+          <Text style={styles.typeText}>{transfer.type}</Text>
+        </View>
       )
     } 
     })}
@@ -206,7 +204,7 @@ export default function Team({route}) {
 return (
     
   <Tab.Navigator  screenOptions={{
-    tabBarActiveTintColor: COLORS.secondaryColor,
+    tabBarActiveTintColor: "white",
     tabBarLabelStyle: { fontSize: 12 },
     tabBarItemStyle: { width: 120,height:50},
     tabBarStyle: { backgroundColor: COLORS.primaryColor },
@@ -222,24 +220,28 @@ return (
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 10,backgroundColor: COLORS.InputColor,paddingBottom:4},
-  head: { height: 40, backgroundColor: COLORS.primaryColor },
+  head: { height: 40, backgroundColor: COLORS.InputColor,paddingBottom:10 },
   wrapper: {backgroundColor: COLORS.primaryColor },
-  text: { textAlign: 'center',color:COLORS.secondaryColor,fontSize:20 },
+  text: { textAlign: 'center',color:'white',fontSize:20},
   row: {
-    backgroundColor: COLORS.primaryColor,
+    marginTop: 10,
     height: 50,
     flexDirection: "row",
-    justifyContent: 'space-between',
-    borderRadius:15,
-    padding:10,
-    margin:5
+    justifyContent: 'flex-start',
+    paddingHorizontal: 10,
   },
   rowText: {
     flex: 1, 
     fontSize: 14,
     color: COLORS.secondaryColor,
-    textAlign: 'center',
-    marginStart:4,
-    marginTop:4
+    paddingLeft:10,
+    paddingTop:5
   },
+  typeText:{
+    paddingLeft:10,
+    color: COLORS.secondaryColor,
+    paddingLeft:10,
+    paddingTop:5
+  },
+
 });
