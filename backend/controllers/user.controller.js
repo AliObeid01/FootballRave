@@ -6,7 +6,7 @@ const getLeagues = async (req,res) => {
     method: 'GET',
     url: 'https://v3.football.api-sports.io/leagues',
     headers: {
-      'x-rapidapi-key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'x-rapidapi-key': '35425fde30eb656595d7c9fc995ef049',
       'x-rapidapi-host': 'v3.football.api-sports.io'
     }
   };
@@ -33,7 +33,7 @@ const getLeagueTeams = async (req,res) => {
     url: 'https://v3.football.api-sports.io/standings',
     params: {season: '2022', league: req.body.league_id},
     headers: {
-      'X-RapidAPI-Key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'X-RapidAPI-Key': '35425fde30eb656595d7c9fc995ef049',
       'X-RapidAPI-Host': 'v3.football.api-sports.io'
     }
   };
@@ -60,7 +60,7 @@ const getLeagueFixtures = async (req,res) => {
     url: 'https://v3.football.api-sports.io/fixtures',
     params: {season: '2022', league: req.body.league_id},
     headers: {
-      'X-RapidAPI-Key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'X-RapidAPI-Key': process.env.API_key,
       'X-RapidAPI-Host': 'v3.football.api-sports.io'
     }
   };
@@ -90,7 +90,7 @@ const getLeagueStandings = async (req,res) => {
     url: 'https://v3.football.api-sports.io/standings',
     params: {season: '2022', league: req.body.league_id},
     headers: {
-      'X-RapidAPI-Key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'X-RapidAPI-Key': process.env.API_key,
       'X-RapidAPI-Host': 'v3.football.api-sports.io'
     }
   };
@@ -123,7 +123,7 @@ const getLeagueTopScores = async (req,res) => {
     url: 'https://v3.football.api-sports.io/players/topscorers',
     params: {season: '2022', league: req.body.league_id},
     headers: {
-      'X-RapidAPI-Key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'X-RapidAPI-Key': process.env.API_key,
       'X-RapidAPI-Host': 'v3.football.api-sports.io'
     }
   };
@@ -152,7 +152,7 @@ const getLeagueTopAssists = async (req,res) => {
     url: 'https://v3.football.api-sports.io/players/topassists',
     params: {season: '2022', league: req.body.league_id},
     headers: {
-      'X-RapidAPI-Key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'X-RapidAPI-Key': process.env.API_key,
       'X-RapidAPI-Host': 'v3.football.api-sports.io'
     }
   };
@@ -181,7 +181,7 @@ const getLiveMatches = async (req,res) => {
     url: 'https://v3.football.api-sports.io/fixtures',
     params: {live: 'all'},
     headers: {
-      'X-RapidAPI-Key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'X-RapidAPI-Key': process.env.API_key,
       'X-RapidAPI-Host': 'v3.football.api-sports.io'
     }
   };
@@ -217,7 +217,7 @@ const getTeamFixtures = async (req,res) => {
     url: 'https://v3.football.api-sports.io/fixtures',
     params: {season: '2022', team: req.body.team_id},
     headers: {
-      'X-RapidAPI-Key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'X-RapidAPI-Key': process.env.API_key,
       'X-RapidAPI-Host': 'v3.football.api-sports.io'
     }
   };
@@ -248,7 +248,7 @@ const getTeamSquad = async (req,res) => {
     url: 'https://v3.football.api-sports.io/players/squads',
     params: {team: req.body.team_id},
     headers: {
-      'X-RapidAPI-Key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'X-RapidAPI-Key': process.env.API_key,
       'X-RapidAPI-Host': 'v3.football.api-sports.io'
     }
   };
@@ -277,7 +277,7 @@ const getTeamTransfers = async (req,res) => {
     url: 'https://v3.football.api-sports.io/transfers',
     params: {team: req.body.team_id},
     headers: {
-      'X-RapidAPI-Key': '8fba4a643bed059aa2ca0ec5ee270b12',
+      'X-RapidAPI-Key': process.env.API_key,
       'X-RapidAPI-Host': 'v3.football.api-sports.io'
     }
   };
