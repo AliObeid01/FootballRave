@@ -34,6 +34,13 @@ function Matches({route}) {
     }
     getFixtures();
   }, []);
+  if(fixtures.length==0){
+    return (
+      <View style={{backgroundColor:COLORS.InputColor,height:'100%',textAlign:'center'}}>
+      <ActivityIndicator size="large" color={COLORS.secondaryColor} />
+      </View>
+    )
+    }
   
  return (  
   <ScrollView style={{backgroundColor:COLORS.InputColor}}>

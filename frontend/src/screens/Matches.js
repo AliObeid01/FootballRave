@@ -83,7 +83,7 @@ function MatchScreen() {
 
   if(legs.length==0){
     return (
-      <View style={{backgroundColor:COLORS.InputColor,height:'100%'}}>
+      <View style={{backgroundColor:COLORS.InputColor,height:'100%',textAlign:'center'}}>
       <ActivityIndicator size="large" color={COLORS.secondaryColor} />
       </View>
     )
