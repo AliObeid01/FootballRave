@@ -70,5 +70,5 @@ const styles = StyleSheet.create({
   wrapper: { flexDirection: 'row',backgroundColor: COLORS.primaryColor },
   //title: { flex: 1, backgroundColor: '#2ecc71' },
   row: { height: 28 },
-  text: { textAlign: 'center',color:'white' },
+  text: {paddingLeft:5, color:'white' },
 });
