@@ -109,10 +109,10 @@ function Squad({route}) {
   <ScrollView style={{backgroundColor:COLORS.InputColor,paddingTop:5}}>
     {squads.map((squad) => {
     return (
-      <View style={styles.row}>
+      <View style={styles.squadrow}>
         <Avatar  size="small" rounded source={{uri:squad.photo}}/>
-        <Text style={styles.rowText}>{squad.name}</Text>
-        <Text style={styles.rowText}>{squad.position}</Text>
+        <Text style={styles.squadText}>{squad.name}</Text>
+        <Text style={styles.squadText}>{squad.position}</Text>
       </View>
       );
       })
@@ -230,6 +230,23 @@ const styles = StyleSheet.create({
   head: { height: 40, backgroundColor: COLORS.InputColor,paddingBottom:10 },
   wrapper: {backgroundColor: COLORS.primaryColor },
   text: { textAlign: 'center',color:'white',fontSize:20},
+  squadrow: {
+    backgroundColor: COLORS.primaryColor,
+    height: 50,
+    flexDirection: "row",
+    justifyContent: 'space-between',
+    borderRadius:15,
+    padding:10,
+    margin:5
+  },
+  squadText: {
+    flex: 1, 
+    fontSize: 14,
+    color: COLORS.secondaryColor,
+    textAlign: 'center',
+    marginStart:4,
+    marginTop:4
+  },
   row: {
     marginTop: 10,
     height: 50,
