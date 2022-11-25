@@ -13,8 +13,8 @@ import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { createStackNavigator } from '@react-navigation/stack'
-import Messaging from "../screens/Messaging";
-import Chat from "../screens/Chat";
+import Messaging from "../screens/Messaging"
+import Chat from "../screens/Chat"
 import { URL } from '../core/axiosUrl'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
@@ -37,16 +37,16 @@ function MatchScreen() {
         setLiveMatches(res.data.data); 
       });
     }
-    getLiveMatches();
+    getLiveMatches()
   }, []);
 
-    if(liveMatches.length==0){
+  if(liveMatches.length==0){
     return (
       <View style={{backgroundColor:COLORS.InputColor,height:'100%'}}>
       <Text style={{color:COLORS.secondaryColor,fontSize:20,textAlign:'center',marginTop:250}}>No Ongiong Matches</Text>
       </View>
     )
-    }
+  }
   return (
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
       {liveMatches.map((live) => {  
@@ -79,7 +79,7 @@ function MatchScreen() {
         setLeg(res.data.data); 
       });
     }
-    getleagues();
+    getleagues()
   }, []);
 
   if(legs.length==0){
@@ -97,7 +97,7 @@ function MatchScreen() {
       })}      
     </View>
     </ScrollView>
-  );
+  )
 }
 
 function ChatScreen() {
@@ -108,11 +108,10 @@ function ChatScreen() {
       <Stack.Screen name='Chat Room' component={Chat} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: 'white'})} />
       <Stack.Screen name='Messaging' component={Messaging} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: 'white'})}/>
    </Stack.Navigator>
-  );
+  )
 }
 
 const Tab = createBottomTabNavigator()
-
 
 export default function Matches() {
   
