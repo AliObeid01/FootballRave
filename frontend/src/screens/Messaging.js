@@ -1,26 +1,26 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import { View, TextInput,FlatList, Pressable } from "react-native";
-import socket from "../utils/socket";
-import MessageComponent from "../components/MessageComponent";
-import { styles } from "../utils/styles";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useEffect, useLayoutEffect, useState } from "react"
+import { View, TextInput,FlatList, Pressable } from "react-native"
+import socket from "../utils/socket"
+import MessageComponent from "../components/MessageComponent"
+import { styles } from "../utils/styles"
+import AsyncStorage from "@react-native-async-storage/async-storage"
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
-import { COLORS } from "../core/COLORS";
+import { COLORS } from "../core/COLORS"
 
 
 const Messaging = ({ route, navigation }) => {
-	const [user, setUser] = useState("");
+	const [user, setUser] = useState("")
    
     const { name, id } = route.params;
 
 	const [chatMessages, setChatMessages] = useState([]);
-	const [message, setMessage] = useState("");
+	const [message, setMessage] = useState("")
 
     const getUsername = async () => {
 		try {
 			const value = await AsyncStorage.getItem("@user");
 			if (value !== null) {
-				setUser(value);
+				setUser(value)
 			}
 		} catch (e) {
 			console.error("Error while loading username!");
@@ -31,12 +31,12 @@ const Messaging = ({ route, navigation }) => {
 		const hour =
 			new Date().getHours() < 10
 				? `0${new Date().getHours()}`
-				: `${new Date().getHours()}`;
+				: `${new Date().getHours()}`
 
 		const mins =
 			new Date().getMinutes() < 10
 				? `0${new Date().getMinutes()}`
-				: `${new Date().getMinutes()}`;
+				: `${new Date().getMinutes()}`
 
 		if (user) {
 			socket.emit("newMessage", {
@@ -44,53 +44,38 @@ const Messaging = ({ route, navigation }) => {
 				room_id: id,
 				user,
 				timestamp: { hour, mins },
-			});
+			})
 		}
-	};
+	}
 
     useLayoutEffect(() => {
-		navigation.setOptions({ title: name });
-		getUsername();
-		socket.emit("findRoom", id);
-		socket.on("foundRoom", (roomChats) => setChatMessages(roomChats));
+		navigation.setOptions({ title: name })
+		getUsername()
+		socket.emit("findRoom", id)
+		socket.on("foundRoom", (roomChats) => setChatMessages(roomChats))
 	}, []);
 
 	useEffect(() => {
-		socket.on("foundRoom", (roomChats) => setChatMessages(roomChats));
+		socket.on("foundRoom", (roomChats) => setChatMessages(roomChats))
 	}, [socket]);
 
 	return (
 		<View style={styles.messagingscreen}>
-			<View
-				style={[
-					styles.messagingscreen,
-					{ paddingVertical: 15, paddingHorizontal: 10 },
-				]}
-			>
-				{chatMessages[0] ? (
-					<FlatList
-						data={chatMessages}
-						renderItem={({ item }) => (
-							<MessageComponent item={item} user={user} />
-						)}
-						keyExtractor={(item) => item.id}
-					/>
-				) : (
-					""
-				)}
-			</View>
-
-			<View style={styles.messaginginputContainer}>
-				<TextInput
-					style={styles.messaginginput}
-					onChangeText={(value) => setMessage(value)}
-				/>
-				<Pressable onPress={handleNewMessage}>
-					<MaterialIcons name='send' size={25} style={{ color:COLORS.secondaryColor,padding:2,marginBottom:5}}/>	
-				</Pressable>
-			</View>
+		<View style={[styles.messagingscreen,{ paddingVertical: 15, paddingHorizontal: 10 },]}>
+			{chatMessages[0] ? (
+			<FlatList data={chatMessages} renderItem={({ item }) => (<MessageComponent item={item} user={user} />)} keyExtractor={(item) => item.id}/>
+			) : (
+				""
+			)}
 		</View>
-	);
-};
+        <View style={styles.messaginginputContainer}>
+			<TextInput style={styles.messaginginput} onChangeText={(value) => setMessage(value)}/>
+			<Pressable onPress={handleNewMessage}>
+				<MaterialIcons name='send' size={25} style={{ color:COLORS.secondaryColor,padding:2,marginBottom:5}}/>	
+			</Pressable>
+		</View>
+		</View>
+	)
+}
 
-export default Messaging;
+export default Messaging
