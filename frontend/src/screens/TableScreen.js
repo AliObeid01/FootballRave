@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
   head: { height: 40, backgroundColor: COLORS.primaryColor },
   headertext:{textAlign: 'center',color: COLORS.secondaryColor},
   wrapper: { flexDirection: 'row',backgroundColor: COLORS.primaryColor },
-  //title: { flex: 1, backgroundColor: '#2ecc71' },
   row: { height: 28 },
   text: {paddingLeft:5, color:'white' },
 });

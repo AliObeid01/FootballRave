@@ -1,6 +1,5 @@
 import { View, Text, Pressable } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
-import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "../utils/styles";
 import { Avatar } from "react-native-elements"
@@ -21,25 +20,18 @@ const ChatComponent = ({ item }) => {
 	};
 
 	return (
-		<Pressable style={styles.cchat} onPress={handleNavigation}>
-
-        <Avatar  size="small"  rounded source={require('../assets/logo.png')}/>
-
-			<View style={styles.crightContainer}>
-				<View>
-					<Text style={styles.cusername}>{item.name}</Text>
-
-					<Text style={styles.cmessage}>
-						{messages?.text ? messages.text : "join Room"}
-					</Text>
-				</View>
-				<View>
-					<Text style={styles.ctime}>
-						{messages?.time ? messages.time : "now"}
-					</Text>
-				</View>
-			</View>
-		</Pressable>
+	<Pressable style={styles.cchat} onPress={handleNavigation}>
+     <Avatar  size="small"  rounded source={require('../assets/logo.png')}/>
+     <View style={styles.crightContainer}>
+		<View>
+		  <Text style={styles.cusername}>{item.name}</Text>
+          <Text style={styles.cmessage}>{messages?.text ? messages.text : "join Room"}</Text>
+		</View>
+		<View>
+		  <Text style={styles.ctime}>{messages?.time ? messages.time : "now"}</Text>
+		</View>
+	 </View>
+	</Pressable>
 	);
 };
 
