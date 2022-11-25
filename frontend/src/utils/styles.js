@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from "react-native"
 import { COLORS } from '../core/COLORS'
 
 export const styles = StyleSheet.create({
@@ -42,8 +42,6 @@ export const styles = StyleSheet.create({
 	},
 	chatscreen: {
 		flex: 1,
-		//padding: 10,
-		//position: "relative",
         backgroundColor: COLORS.InputColor,
 	},
 	chatheading: {
@@ -186,4 +184,4 @@ export const styles = StyleSheet.create({
 		opacity: 0.5,
         color:COLORS.secondaryColor
 	},
-});
+})

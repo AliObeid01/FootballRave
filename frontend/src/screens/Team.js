@@ -114,7 +114,7 @@ function Squad({route}) {
         <Text style={styles.squadText}>{squad.name}</Text>
         <Text style={styles.squadText}>{squad.position}</Text>
       </View>
-      );
+      )
       })
     }
   </ScrollView>
@@ -140,15 +140,15 @@ function Transfers({route}) {
         }
     }).then((res) => {
       setTransfers(res.data.data);
-    });
+    })
     }
-    getTransfers();
+    getTransfers()
   }, []);
  
   const CONTENT = {
     In: ['Players In'],
     Out: ['Players Out'],    
-   };
+   }
 
 return(
 <ScrollView style={{backgroundColor:COLORS.InputColor}}>
@@ -268,4 +268,4 @@ const styles = StyleSheet.create({
     paddingTop:5
   },
 
-});
+})

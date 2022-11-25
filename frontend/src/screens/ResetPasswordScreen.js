@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Background from '../components/Background'
 import Logo from '../components/Logo'
-import Title from '../components/Title'
 import TextInput from '../components/TextInput'
 import Button from '../components/Button'
 import { emailValidator } from '../helpers/emailValidator'

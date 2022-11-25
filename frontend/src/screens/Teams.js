@@ -29,7 +29,7 @@ export default function Teams({route}) {
         setTeams(res.data.data);
       });
     }
-    getTeams();
+    getTeams()
   }, []);
 
 return (

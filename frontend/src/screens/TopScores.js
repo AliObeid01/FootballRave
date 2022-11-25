@@ -5,7 +5,7 @@ import { COLORS } from '../core/COLORS'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { useEffect, useState } from "react"
-import { Table, TableWrapper, Row, Rows} from 'react-native-table-component';
+import { Table, TableWrapper, Row} from 'react-native-table-component';
 import Ionicons from '@expo/vector-icons/Ionicons'
 import Icon from '@expo/vector-icons/MaterialCommunityIcons'
 import { URL } from '../core/axiosUrl'
@@ -29,10 +29,10 @@ export default function TopScores({route}) {
 
             }
         }).then((res) => {
-            setTopScores(res.data.data);
-        });
+            setTopScores(res.data.data)
+        })
         }
-        getTopScores();
+        getTopScores()
     }, []);
 
     useEffect(() => {
@@ -47,16 +47,16 @@ export default function TopScores({route}) {
 
             }
         }).then((res) => {
-            setTopAssist(res.data.data);
-        });
+            setTopAssist(res.data.data)
+        })
         }
-        getTopAssist();
+        getTopAssist()
     }, []);
 
     const CONTENT = {
         scores: ['Top Scores'],
         assist: ['Top Assists'],    
-    };
+    }
     
     return (
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
@@ -104,7 +104,7 @@ export default function TopScores({route}) {
     </Table>
     </View>
     </ScrollView>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
@@ -132,4 +132,4 @@ const styles = StyleSheet.create({
     paddingLeft:10,
     paddingTop:5
   }
-});
+})

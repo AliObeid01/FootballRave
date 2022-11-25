@@ -3,10 +3,10 @@ import { Provider } from 'react-native-paper'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { COLORS } from './src/core/COLORS'
-import * as Device from 'expo-device';
-import * as Notifications from 'expo-notifications';
-import { useState, useEffect, useRef } from 'react';
-import { Platform } from 'react-native';
+import * as Device from 'expo-device'
+import * as Notifications from 'expo-notifications'
+import { useState, useEffect, useRef } from 'react'
+import { Platform } from 'react-native'
 
 
 import {
@@ -36,26 +36,26 @@ Notifications.setNotificationHandler({
 
 export default function App() {
 
-  const [expoPushToken, setExpoPushToken] = useState('');
-  const [notification, setNotification] = useState(false);
-  const notificationListener = useRef();
-  const responseListener = useRef();
+  const [expoPushToken, setExpoPushToken] = useState('')
+  const [notification, setNotification] = useState(false)
+  const notificationListener = useRef()
+  const responseListener = useRef()
 
   useEffect(() => {
-    registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
+    registerForPushNotificationsAsync().then(token => setExpoPushToken(token))
 
     notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
-      setNotification(notification);
-    });
+      setNotification(notification)
+    })
 
     responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
-      console.log(response);
-    });
+      console.log(response)
+    })
 
     return () => {
-      Notifications.removeNotificationSubscription(notificationListener.current);
-      Notifications.removeNotificationSubscription(responseListener.current);
-    };
+      Notifications.removeNotificationSubscription(notificationListener.current)
+      Notifications.removeNotificationSubscription(responseListener.current)
+    }
   }, []);
 
   
@@ -101,7 +101,7 @@ async function schedulePushNotification() {
       data: { data: 'goes here' },
     },
     trigger: { seconds: 2 },
-  });
+  })
 }
 
 async function registerForPushNotificationsAsync() {
@@ -117,21 +117,21 @@ async function registerForPushNotificationsAsync() {
   }
 
   if (Device.isDevice) {
-    const { status: existingStatus } = await Notifications.getPermissionsAsync();
-    let finalStatus = existingStatus;
+    const { status: existingStatus } = await Notifications.getPermissionsAsync()
+    let finalStatus = existingStatus
     if (existingStatus !== 'granted') {
-      const { status } = await Notifications.requestPermissionsAsync();
-      finalStatus = status;
+      const { status } = await Notifications.requestPermissionsAsync()
+      finalStatus = status
     }
     if (finalStatus !== 'granted') {
-      alert('Failed to get push token for push notification!');
+      alert('Failed to get push token for push notification!')
       return;
     }
-    token = (await Notifications.getExpoPushTokenAsync()).data;
+    token = (await Notifications.getExpoPushTokenAsync()).data
     console.log(token);
   } else {
-    alert('Must use physical device for Push Notifications');
+    alert('Must use physical device for Push Notifications')
   }
 
-  return token;
+  return token
 }
