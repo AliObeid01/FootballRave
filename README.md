@@ -23,20 +23,15 @@
 
 >• Team details: Matches, Transfers and Squad.
 
->• Match details: Overview, Lineup, Head to Head and Predictions.
 
->• Notifications on Match start, Match end and Team scored.
-
->• Chat Room.
+>• Chat rooms: join your favorite team room and chats with fans.
 
 ### User Stories
 - As a user, I want to browse Matches statistics , so that I can find live matches, upcoming matches and the already played.
 - As a user, I want to browse Leagues, so that I can find my favorite league and check its statistics.
 - As a user, I want to browse Teams, so that I can find my favorite team and check its statistics.
-- As a user, I want to browse Matches, so that I can find my favorite team and check its statistics.
 - As a user, I want to receive notifications when a match start, match end and team scored.
-- As a user, I want to receive notifications when a match start, match end and team scored.
-- As a user, I want to create and join chat rooms.
+
 
 <br><br>
 
@@ -51,7 +46,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 Here's a brief high-level overview of the tech stack the Well app uses:
 
-- This project uses [React Native EXPO](https://expo.dev/) for the Frontend. Expo is a bundle of tools created around React Native to help you start an app very fast. Coupled with [TypeScript](https://www.typescriptlang.org/). TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+- This project uses [React Native EXPO](https://expo.dev/) for the Frontend. Expo is a bundle of tools created around React Native to help you start an app very fast.
 - This project uses [ExpressJS](https://expressjs.com/) for the Backend. Fast, unopinionated, minimalist web framework for [NodeJS](https://nodejs.org/en/).
 - For persistent storage (database), the app uses the [Mongoose ODM](https://mongoosejs.com) package which allows the app to create a custom storage schema and save it to [MongoDB](https://www.mongodb.com).
 
