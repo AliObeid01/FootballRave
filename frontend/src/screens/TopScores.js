@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import { Table, TableWrapper, Row, Rows} from 'react-native-table-component';
 import Ionicons from '@expo/vector-icons/Ionicons'
 import Icon from '@expo/vector-icons/MaterialCommunityIcons'
+import { URL } from '../core/axiosUrl'
 
 export default function TopScores({route}) {
     const [TopScores, setTopScores] = useState([]);
@@ -22,7 +23,7 @@ export default function TopScores({route}) {
         axios({
             method: "POST",
             data,
-            url: `http://192.168.1.3:5000/user/TopScores`,
+            url: `${URL.ip}/TopScores`,
             headers:{
             "Authorization" : "Bearer " +token
 
@@ -40,7 +41,7 @@ export default function TopScores({route}) {
         axios({
             method: "POST",
             data,
-            url: `http://192.168.1.3:5000/user/TopAssists`,
+            url: `${URL.ip}/TopAssists`,
             headers:{
             "Authorization" : "Bearer " +token
 

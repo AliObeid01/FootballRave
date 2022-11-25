@@ -15,6 +15,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 import { createStackNavigator } from '@react-navigation/stack'
 import Messaging from "../screens/Messaging";
 import Chat from "../screens/Chat";
+import { URL } from '../core/axiosUrl'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
@@ -27,7 +28,7 @@ function MatchScreen() {
       const token = await AsyncStorage.getItem('@token')
       axios({
         method: "GET",
-        url: `http://192.168.1.3:5000/user/live`,
+        url: `${URL.ip}/live`,
         headers:{
           "Authorization" : "Bearer " +token
   
@@ -69,7 +70,7 @@ function MatchScreen() {
       const token = await AsyncStorage.getItem('@token')
       axios({
         method: "GET",
-        url: `http://192.168.1.3:5000/user/leagues`,
+        url: `${URL.ip}/leagues`,
         headers:{
           "Authorization" : "Bearer " +token
   

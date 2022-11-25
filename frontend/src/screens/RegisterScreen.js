@@ -11,6 +11,7 @@ import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { nameValidator } from '../helpers/nameValidator'
 import axios from "axios"
+import { URL } from '../core/axiosUrl'
 
 export default function RegisterScreen({ navigation }) {
   const [name, setName] = useState({ value: '', error: '' })
@@ -39,7 +40,7 @@ export default function RegisterScreen({ navigation }) {
       await axios({       
         method: "POST",
         data,
-        url: "http://192.168.1.3:5000/auth/signup",
+        url: `${URL.auth}/signup`,
         headers:{
           'Content-Type': 'application/x-www-form-urlencoded',
           }

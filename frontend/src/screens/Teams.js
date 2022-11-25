@@ -5,6 +5,7 @@ import { COLORS } from '../core/COLORS'
 import TeamCard from '../components/TeamCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import { URL } from '../core/axiosUrl'
 
 export default function Teams({route}) {
 
@@ -19,7 +20,7 @@ export default function Teams({route}) {
       axios({
         method: "POST",
         data,
-        url: `http://192.168.1.3:5000/user/teams`,
+        url: `${URL.ip}/teams`,
         headers:{
           "Authorization" : "Bearer " +token
   

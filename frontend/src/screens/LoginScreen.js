@@ -11,6 +11,7 @@ import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import { URL } from '../core/axiosUrl'
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
@@ -36,7 +37,7 @@ export default function LoginScreen({ navigation }) {
       await axios({       
         method: "POST",
         data,
-        url: "http://192.168.1.3:5000/auth/signin",
+        url: `${URL.auth}/signin`,
         headers:{
           'Content-Type': 'application/x-www-form-urlencoded',
           }

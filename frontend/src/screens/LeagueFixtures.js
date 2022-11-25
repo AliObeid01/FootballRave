@@ -6,6 +6,7 @@ import FixtureCard from '../components/FixtureCard'
 import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import { URL } from '../core/axiosUrl'
 
 export default function LeagueFixtures({route}) {
 
@@ -21,7 +22,7 @@ useEffect(() => {
     axios({
         method: "POST",
         data,
-        url: `http://192.168.1.3:5000/user/league_fixtures`,
+        url: `${URL.ip}/league_fixtures`,
         headers:{
         "Authorization" : "Bearer " +token
 

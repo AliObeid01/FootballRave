@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View} from 'react-native';
 import { Table, TableWrapper, Row, Rows} from 'react-native-table-component';
 import { COLORS } from '../core/COLORS'
+import { URL } from '../core/axiosUrl'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { useEffect, useState } from "react"
@@ -19,7 +20,7 @@ export default function BasicTable({route}) {
         axios({
             method: "POST",
             data,
-            url: `http://192.168.1.3:5000/user/league_standings`,
+            url: `${URL.ip}/league_standings`,
             headers:{
             "Authorization" : "Bearer " +token
 

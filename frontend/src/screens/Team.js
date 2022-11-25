@@ -9,7 +9,7 @@ import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
-
+import { URL } from '../core/axiosUrl'
 
 function Matches({route}) {
   const [fixtures, setFixtures] = useState([]);
@@ -23,7 +23,7 @@ function Matches({route}) {
     axios({
         method: "POST",
         data,
-        url: `http://192.168.1.3:5000/user/team_fixtures`,
+        url: `${URL.ip}/team_fixtures`,
         headers:{
         "Authorization" : "Bearer " +token
 
@@ -93,7 +93,7 @@ function Squad({route}) {
     axios({
         method: "POST",
         data,
-        url: `http://192.168.1.3:5000/user/team_squad`,
+        url: `${URL.ip}/team_squad`,
         headers:{
         "Authorization" : "Bearer " +token
 
@@ -133,7 +133,7 @@ function Transfers({route}) {
     axios({
         method: "POST",
         data,
-        url: `http://192.168.1.3:5000/user/team_transfers`,
+        url: `${URL.ip}/team_transfers`,
         headers:{
         "Authorization" : "Bearer " +token
 
