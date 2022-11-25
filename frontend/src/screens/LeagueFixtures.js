@@ -37,10 +37,10 @@ useEffect(() => {
 if(fixtures.length==0){
   return (
     <View style={{backgroundColor:COLORS.InputColor,height:'100%',flex: 1,justifyContent: "center"}}>
-    <ActivityIndicator size="large" color={COLORS.secondaryColor} />
+      <ActivityIndicator size="large" color={COLORS.secondaryColor} />
     </View>
   )
-  }
+}
 
 return (  
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
