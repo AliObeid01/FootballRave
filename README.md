@@ -19,11 +19,10 @@
 
 >• Live match scores.
 
->• League details : team, fixtures, tables, and Top Scores.
+>• League details : Teams, Fixtures, Table, and Top Scores.
 
->• Team details: matches, linup, transfers and squad.
+>• Team details: Matches, Transfers and Squad.
 
->• Notifications on match start, match end and team scored.
 
 >• Chat rooms: join your favorite team room and chats with fans.
 
@@ -32,7 +31,7 @@
 - As a user, I want to browse Leagues, so that I can find my favorite league and check its statistics.
 - As a user, I want to browse Teams, so that I can find my favorite team and check its statistics.
 - As a user, I want to receive notifications when a match start, match end and team scored.
-- As a user, I want to chat with my favorite team fans in a chat room or create my own room.
+
 
 <br><br>
 
