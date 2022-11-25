@@ -40,7 +40,8 @@ export default function LoginScreen({ navigation }) {
         url: `${URL.auth}/signin`,
         headers:{
           'Content-Type': 'application/x-www-form-urlencoded',
-          }
+          },
+          
       }).then(async (res) => {
           await AsyncStorage.setItem('@token',res.data.token)
           await AsyncStorage.setItem('@user',res.data.user)
