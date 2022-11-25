@@ -1,7 +1,7 @@
-import { View, Text, Pressable } from "react-native";
-import React, { useLayoutEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { styles } from "../utils/styles";
+import { View, Text, Pressable } from "react-native"
+import React, { useLayoutEffect, useState } from "react"
+import { useNavigation } from "@react-navigation/native"
+import { styles } from "../utils/styles"
 import { Avatar } from "react-native-elements"
 
 const ChatComponent = ({ item }) => {
@@ -9,7 +9,7 @@ const ChatComponent = ({ item }) => {
 	const [messages, setMessages] = useState({});
 
 	useLayoutEffect(() => {
-		setMessages(item.messages[item.messages.length - 1]);
+		setMessages(item.messages[item.messages.length - 1])
 	}, []);
 
 	const handleNavigation = () => {
@@ -32,7 +32,7 @@ const ChatComponent = ({ item }) => {
 		</View>
 	 </View>
 	</Pressable>
-	);
-};
+	)
+}
 
-export default ChatComponent;
+export default ChatComponent
