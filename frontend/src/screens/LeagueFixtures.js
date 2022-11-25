@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from "react"
-import { ScrollView ,View } from 'react-native'
+import { ScrollView ,View,ActivityIndicator } from 'react-native'
 import { COLORS } from '../core/COLORS'
 import FixtureCard from '../components/FixtureCard'
 import MatchCard from '../components/MatchCard'
@@ -35,7 +35,7 @@ useEffect(() => {
 
 if(fixtures.length==0){
   return (
-    <View style={{backgroundColor:COLORS.InputColor,height:'100%',textAlign:'center'}}>
+    <View style={{backgroundColor:COLORS.InputColor,height:'100%',flex: 1,justifyContent: "center"}}>
     <ActivityIndicator size="large" color={COLORS.secondaryColor} />
     </View>
   )

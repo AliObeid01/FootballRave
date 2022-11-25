@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from "react"
-import { ScrollView,View,Text,StyleSheet } from 'react-native'
+import { ScrollView,View,Text,StyleSheet,ActivityIndicator } from 'react-native'
 import { COLORS } from '../core/COLORS'
 import { Avatar } from "react-native-elements"
 import { Table, TableWrapper, Row} from 'react-native-table-component'
@@ -36,7 +36,7 @@ function Matches({route}) {
   }, []);
   if(fixtures.length==0){
     return (
-      <View style={{backgroundColor:COLORS.InputColor,height:'100%',textAlign:'center'}}>
+      <View style={{backgroundColor:COLORS.InputColor,height:'100%',flex: 1,justifyContent: "center"}}>
       <ActivityIndicator size="large" color={COLORS.secondaryColor} />
       </View>
     )
