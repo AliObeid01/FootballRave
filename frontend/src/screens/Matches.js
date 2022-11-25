@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from "react"
-import {ScrollView, View,Text} from 'react-native'
+import {ScrollView, View,Text,ActivityIndicator} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS } from '../core/COLORS'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
@@ -13,9 +13,10 @@ import MatchCard from '../components/MatchCard'
 import axios from "axios"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { createStackNavigator } from '@react-navigation/stack'
-import ChatLogin from "../screens/ChatLogin";
 import Messaging from "../screens/Messaging";
 import Chat from "../screens/Chat";
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native'
 
 function MatchScreen() {
 
@@ -26,7 +27,7 @@ function MatchScreen() {
       const token = await AsyncStorage.getItem('@token')
       axios({
         method: "GET",
-        url: `http://192.168.43.250:5000/user/live`,
+        url: `http://192.168.1.3:5000/user/live`,
         headers:{
           "Authorization" : "Bearer " +token
   
@@ -68,7 +69,7 @@ function MatchScreen() {
       const token = await AsyncStorage.getItem('@token')
       axios({
         method: "GET",
-        url: `http://192.168.43.250:5000/user/leagues`,
+        url: `http://192.168.1.3:5000/user/leagues`,
         headers:{
           "Authorization" : "Bearer " +token
   
@@ -80,6 +81,13 @@ function MatchScreen() {
     getleagues();
   }, []);
 
+  if(legs.length==0){
+    return (
+      <View style={{backgroundColor:COLORS.InputColor,height:'100%'}}>
+      <ActivityIndicator size="large" color={COLORS.secondaryColor} />
+      </View>
+    )
+    }
   return (
     <ScrollView style={{backgroundColor:COLORS.InputColor}}>
     <View style={{backgroundColor:COLORS.InputColor,flexDirection: 'row',justifyContent: 'center',alignItems: 'center',flexWrap: 'wrap',height:'100%'}}>
@@ -93,9 +101,10 @@ function MatchScreen() {
 
 function ChatScreen() {
   const Stack = createStackNavigator();
+  
   return (
     <Stack.Navigator>
-      <Stack.Screen name='Chat Room' component={Chat} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: COLORS.secondaryColor})} />
+      <Stack.Screen name='Chat Room' component={Chat} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: 'white'})} />
       <Stack.Screen name='Messaging' component={Messaging} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: 'white'})}/>
    </Stack.Navigator>
   );
@@ -103,7 +112,9 @@ function ChatScreen() {
 
 const Tab = createBottomTabNavigator()
 
+
 export default function Matches() {
+  
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
       tabBarIcon: ({ focused }) => {
@@ -124,9 +135,9 @@ export default function Matches() {
       headerStyle: {backgroundColor:COLORS.primaryColor},
       headerTintColor:  COLORS.secondaryColor
   })}>
-      <Tab.Screen name="Live Matches" component={MatchScreen}/>
-      <Tab.Screen name="Leagues" component={LeaguesScreen}/>
-      <Tab.Screen name="ChatRoom" component={ChatScreen} options={{ headerShown: false }}/>
+      <Tab.Screen name="Live Matches" component={MatchScreen} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: 'white'})} />
+      <Tab.Screen name="Leagues" component={LeaguesScreen} options={() =>({headerStyle: { backgroundColor: COLORS.primaryColor },headerTintColor: 'white'})}/>
+      <Tab.Screen name="ChatRoom" component={ChatScreen} options={() =>({ headerShown: false })}/>
     </Tab.Navigator>
   )
 }

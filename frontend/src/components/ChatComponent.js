@@ -30,7 +30,7 @@ const ChatComponent = ({ item }) => {
 					<Text style={styles.cusername}>{item.name}</Text>
 
 					<Text style={styles.cmessage}>
-						{messages?.text ? messages.text : "Tap to start chatting"}
+						{messages?.text ? messages.text : "join Room"}
 					</Text>
 				</View>
 				<View>

@@ -76,7 +76,7 @@ export const styles = StyleSheet.create({
 		justifyContent: "center",
         
 	},
-	chatemptyText: { fontWeight: "bold", fontSize: 24, paddingBottom: 30,color: COLORS.secondaryColor,},
+	chatemptyText: { fontWeight: "bold", fontSize: 24, paddingBottom: 30,color: COLORS.secondaryColor,textAlign:'center'},
 	messagingscreen: {
 		flex: 1,
 	},

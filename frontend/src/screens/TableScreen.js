@@ -19,7 +19,7 @@ export default function BasicTable({route}) {
         axios({
             method: "POST",
             data,
-            url: `http://192.168.43.250:5000/user/league_standings`,
+            url: `http://192.168.1.3:5000/user/league_standings`,
             headers:{
             "Authorization" : "Bearer " +token
 
