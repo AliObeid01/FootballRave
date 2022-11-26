@@ -71,7 +71,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | League Table                                       | Top Scored                                            | Top Assists                                        | World Cup                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
-| <img src="./readme/Screenshot_20221126_025537_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025548_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_031143_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_031143_host.exp.svg" width="200"/> |
+| <img src="./readme/Screenshot_20221126_025537_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025548_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025556_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_031143_host.exp.svg" width="200"/> |
 
 | Team Fixtures                                       | Squad                                            | Player In                                        | Player Out                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
