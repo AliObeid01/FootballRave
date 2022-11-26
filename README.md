@@ -28,7 +28,7 @@
 >• Chat rooms: join your favorite team room and chats with fans.
 
 ### User Stories
-- As a user, I want to browse Matches statistics , so that I can find live matches, upcoming matches and the already played.
+- As a user, I want to browse Matches, so that I can find live matches, upcoming matches and the already played.
 - As a user, I want to browse Leagues, so that I can find my favorite league and check its statistics.
 - As a user, I want to browse Teams, so that I can find my favorite team and check its statistics.
 - As a user, I want to receive notifications when a match start, match end and team scored.
@@ -40,13 +40,13 @@
 <img src="./readme/title3.svg"/>
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
-Note that i didn't use any styling library or theme, all from scratch and using pure css modules
+Note that i didn't use any styling library or theme, all from scratch and using pure css modules.
 
 <br><br>
 
 <img src="./readme/title4.svg"/>
 
-Here's a brief high-level overview of the tech stack the Well app uses:
+Here's a brief high-level overview of the tech stack the app uses:
 
 - This project uses [React Native EXPO](https://expo.dev/) for the Frontend. Expo is a bundle of tools created around React Native to help you start an app very fast.
 - This project uses [ExpressJS](https://expressjs.com/) for the Backend. Fast, unopinionated, minimalist web framework for [NodeJS](https://nodejs.org/en/).
@@ -59,7 +59,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <br><br>
 <img src="./readme/title5.svg"/>
 
-> Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots and demos from the real app
+> Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots and demos from the real app.
 
 | Log in                                       | SignUp                                            | Live Matches                                        | Leagues                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
