@@ -118,7 +118,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-   🚨 you might need to run `npm install --force`  if you face any dependency conflicts.
+   Hint: you might need to run `npm install --force`  if you face any dependency conflicts.
 4. Install Expo CLI
    ```sh
    npm install --global expo-cli
