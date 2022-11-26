@@ -146,5 +146,17 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm start
    ```
-
-
+   
+~~ Socket IO Server:
+1. Navigate to the SocketServer folder (from root folder)
+   ```sh
+   cd SocketServer/
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Run the Start-Up Command
+   ```sh
+   npm start
+   ```
