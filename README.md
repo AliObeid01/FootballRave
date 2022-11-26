@@ -52,6 +52,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 - This project uses [ExpressJS](https://expressjs.com/) for the Backend. Fast, unopinionated, minimalist web framework for [NodeJS](https://nodejs.org/en/).
 - For persistent storage (database), the app uses the [Mongoose ODM](https://mongoosejs.com) package which allows the app to create a custom storage schema and save it to [MongoDB](https://www.mongodb.com).
 - To send local push notifications, the app uses [expo-notifications](https://docs.expo.dev/versions/latest/sdk/notifications) package which supports Android, iOS.
+- To create chat room and allow users to chating, the app uses [Socket.IO](https://socket.io/) which enables real-time bidirectional event-based communication.
 
 
 
