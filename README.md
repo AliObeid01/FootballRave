@@ -62,7 +62,8 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | Login Page  | Register Page | Login Page  |
 | ------------- | ------------- | ----------- |
-|!![Screenshot_20221126_025410_host exp 1](https://user-images.githubusercontent.com/112481574/204067594-c65e1542-c790-466d-83cd-fb7ff4ef606c.svg)
+|![Screenshot_20221126_025410_host exp 1](https://user-images.githubusercontent.com/112481574/204067640-84f2fd37-b864-4916-908e-34024d97452f.svg)
+
 
 
 
