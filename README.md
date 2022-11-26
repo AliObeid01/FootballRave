@@ -81,6 +81,10 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|----------------------------------------------------|
 | <img src="./readme/Screenshot_20221126_030318_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030334_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030821_host.exp.svg" width="200"/> | <img src="./readme/goalnote.gif" width="200"/> |
 
+| Match Start Notification                                       | Create Room                                            | Chating                                        |  Chating                                        |
+|-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|----------------------------------------------------|
+| <img src="./readme/matchnote.gif" width="200"/> | <img src="./readme/model.gif" width="200"/> | <img src="./readme/chat1.gif" width="200"/> | <img src="./readme/chat2.gif" width="200"/> |
+
 <br><br>
 <img src="./readme/title6.svg"/>
 
