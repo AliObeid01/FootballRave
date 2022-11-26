@@ -62,7 +62,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | Login Page  | Register Page | Login Page  |
 | ------------- | ------------- | ----------- |
-| ![Login Page]![Screenshot_20221126_025410_host exp exponent](https://user-images.githubusercontent.com/112481574/204067391-73e9e179-62b5-4eca-be1c-771745bad795.jpg)
+|[Screenshot_20221126_025410_host exp exponent](https://user-images.githubusercontent.com/112481574/204067391-73e9e179-62b5-4eca-be1c-771745bad795.jpg)
 
 
 | Home Page  | Notifications Page  | Contacts Page  |
