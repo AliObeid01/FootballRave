@@ -60,9 +60,9 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-| Login Page  | Register Page | Login Page  |
+| Login Page  | Register Page | Live Matches Page  |
 | ------------- | ------------- | ----------- |
-|![Screenshot_20221126_025410_host exp 1](https://user-images.githubusercontent.com/112481574/204067737-b3dd1f04-d7ac-4dd9-bc25-6766e60b435f.svg)|![Screenshot_20221126_025410_host exp 1](https://user-images.githubusercontent.com/112481574/204067740-ef60af36-d7e1-4665-8f55-6a31666860d0.svg)
+|<img src="./readme/Screenshot_20221126_025410_host.exp" width="200"/>|<img src="./readme/Screenshot_20221126_025415_host.exp" width="200"/>|<img src="./readme/Screenshot_20221125_183831_host.exp" width="200"/>
 
 
 
