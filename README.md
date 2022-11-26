@@ -60,9 +60,9 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-| Login Page    | Register Page | Live Matches Page || Live Matches Page |
-| ------------- | ------------- | ----------------- || ----------------- |
-|<img src="./readme/Screenshot_20221126_025410_host.exp.svg" width="200"/>|<img src="./readme/Screenshot_20221126_025415_host.exp.svg" width="200"/>|<img src="./readme/Screenshot_20221125_183831_host.exp.svg" width="200"/>|<img src="./readme/Screenshot_20221126_025518_host.exp.svg" width="200"/>|
+| Log in                                       | SignUp                                            | Live Matches                                        | Leagues                                            |
+|-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
+| <img src="./readme/Screenshot_20221126_025410_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025415_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221125_183831_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025518_host.exp.svg" width="200"/> |
 
 
 | Home Page  | Notifications Page  | Contacts Page  |
