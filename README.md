@@ -67,11 +67,11 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | League Page                                       | Teams                                            | Scored                                        | Fixtures                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
-| <img src="./readme/Screenshot_20221126_025529_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025529_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025639_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025743_host.exp.svg" width="200"/> |
+| <img src="./readme/Screenshot_20221126_025529_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025607_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025639_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025743_host.exp.svg" width="200"/> |
 
-| Log in                                       | SignUp                                            | Live Matches                                        | Leagues                                            |
+| League Table                                       | Top Scored                                            | Top Assists                                        | World Cup                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
-| <img src="./readme/Screenshot_20221126_025410_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025415_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221125_183831_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025518_host.exp.svg" width="200"/> |
+| <img src="./readme/Screenshot_20221126_025607_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025548_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025548_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_031143_host.exp.svg" width="200"/> |
 
 | Log in                                       | SignUp                                            | Live Matches                                        | Leagues                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
