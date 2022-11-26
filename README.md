@@ -79,7 +79,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | ChatRoom Page                                       | Create Room                                            | Rooms list                                        |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|
-| <img src="./readme/Screenshot_20221126_030318_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030318_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030821_host.exp.svg" width="200"/> |
+| <img src="./readme/Screenshot_20221126_030318_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030334_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030821_host.exp.svg" width="200"/> |
 
 <br><br>
 <img src="./readme/title6.svg"/>
