@@ -76,7 +76,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | Team Fixtures                                       | Squad                                            | Player In                                        | Player Out                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
-| <img src="./readme/Screenshot_20221126_030020_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030027_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030232_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025556_host.exp.svg" width="200"/> |
+| <img src="./readme/Screenshot_20221126_030020_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030027_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030232_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030245_host.exp.svg" width="200"/> |
 
 | ChatRoom Page                                       | Create Room                                            | Rooms list                                        |  Goal Notification                                        |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|----------------------------------------------------|
