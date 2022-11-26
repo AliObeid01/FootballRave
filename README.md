@@ -74,7 +74,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
 | <img src="./readme/Screenshot_20221126_025537_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025548_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025556_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_031143_host.exp.svg" width="200"/> |
 
-| Team Fixtures                                       | Squad                                            | Player In                                        | Player Out                                            |
+| Team Fixtures                                       | Squad                                            | Players In                                        | Players Out                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
 | <img src="./readme/Screenshot_20221126_030020_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030027_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030232_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_030245_host.exp.svg" width="200"/> |
 
