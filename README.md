@@ -44,7 +44,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Log in                                       | SignUp                                            | Live Matches                                        | Leagues                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
-| <img src="./readme/login-page.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025415_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221125_183831_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025518_host.exp.svg" width="200"/> |
+| <img src="./readme/login-page.svg" width="200"/> | <img src="./readme/signup-page.svg" width="200"/> | <img src="./readme/matches-page.svg" width="200"/> | <img src="./readme/Setup-page-leagues.svg" width="200"/> |
 
 
 | League Page                                       | Teams                                            | Scored                                        | Fixtures                                            |
