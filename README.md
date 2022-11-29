@@ -42,6 +42,15 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules.
 
+| Log in                                       | SignUp                                            | Live Matches                                        | Leagues                                            |
+|-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
+| <img src="./readme/Screenshot_20221126_025410_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025415_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221125_183831_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025518_host.exp.svg" width="200"/> |
+
+
+| League Page                                       | Teams                                            | Scored                                        | Fixtures                                            |
+|-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
+| <img src="./readme/Screenshot_20221126_025529_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025607_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025639_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025743_host.exp.svg" width="200"/> |
+
 <br><br>
 
 <img src="./readme/title4.svg"/>
