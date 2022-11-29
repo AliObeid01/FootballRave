@@ -47,9 +47,9 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | <img src="./readme/login-page.svg" width="200"/> | <img src="./readme/signup-page.svg" width="200"/> | <img src="./readme/matches-page.svg" width="200"/> | <img src="./readme/Setup-page-leagues.svg" width="200"/> |
 
 
-| League Page                                       | Teams                                            | Scored                                        | Fixtures                                            |
+| League Page                                       | Teams                                            | Table                                        | Chat Room                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
-| <img src="./readme/Screenshot_20221126_025529_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025607_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025639_host.exp.svg" width="200"/> | <img src="./readme/Screenshot_20221126_025743_host.exp.svg" width="200"/> |
+| <img src="./readme/league-page.svg" width="200"/> | <img src="./readme/Setup-page-team.svg" width="200"/> | <img src="./readme/league-page-1.svg" width="200"/> | <img src="./readme/news-page.svg" width="200"/> |
 
 <br><br>
 
