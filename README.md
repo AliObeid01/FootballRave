@@ -2,7 +2,7 @@
 
 <div align="center">
 
-> Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
+> Hello world! This is the project’s summary that describes the project plain, simple and limited to the space available.  
 
 **[PROJECT PHILOSOPHY](https://github.com/julescript/well_app#-project-philosophy) • [WIREFRAMES](https://github.com/julescript/well_app#-wireframes) • [TECH STACK](https://github.com/julescript/well_app#-tech-stack) • [IMPLEMENTATION](https://github.com/julescript/well_app#-impplementation) • [HOW TO RUN?](https://github.com/julescript/well_app#-how-to-run)**
 
@@ -23,7 +23,7 @@
 
 >• Team details: matches, linup, transfers and squad.
 
->• Notifications on match start, match end and team scored.
+>• Notifications on match starts, match ends and team scored.
 
 >• Chat rooms: join your favorite team room and chats with fans.
 
@@ -57,10 +57,10 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 Here's a brief high-level overview of the tech stack the app uses:
 
-- This project uses [React Native EXPO](https://expo.dev/) for the Frontend. Expo is a bundle of tools created around React Native to help you start an app very fast.
+- This project uses [React Native EXPO](https://expo.dev/) for the Frontend. Expo is a bundle of tools created around React Native to help you start an app rapidly.
 - This project uses [ExpressJS](https://expressjs.com/) for the Backend. Fast, unopinionated, minimalist web framework for [NodeJS](https://nodejs.org/en/).
 - For persistent storage (database), the app uses the [Mongoose ODM](https://mongoosejs.com) package which allows the app to create a custom storage schema and save it to [MongoDB](https://www.mongodb.com).
-- To send local push notifications, the app uses [expo-notifications](https://docs.expo.dev/versions/latest/sdk/notifications) package which supports Android, iOS.
+- To send local push notifications, the app uses [expo-notifications](https://docs.expo.dev/versions/latest/sdk/notifications) package which supports Android and IOS.
 - To create chat room and allow users to chating, the app uses [Socket.IO](https://socket.io/) which enables real-time bidirectional event-based communication.
 
 
@@ -68,7 +68,7 @@ Here's a brief high-level overview of the tech stack the app uses:
 <br><br>
 <img src="./readme/title5.svg"/>
 
-> Using the above mentioned tech stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots and demos from the real app.
+> Using the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are screenshots and demos from the real app.
 
 
 | Log in                                       | SignUp                                            | Live Matches                                        | Leagues                                            |
